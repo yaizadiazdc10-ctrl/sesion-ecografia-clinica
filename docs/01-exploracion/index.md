@@ -1,5 +1,15 @@
 # Exploración de temas
 
+## Tema elegido
+
+!!! success "Decisión (27 de septiembre de 2026): dos líneas de investigación"
+    En lugar de un único tema, se investigan a fondo **dos líneas que combinan temas**. Después de leerlas se elegirá la definitiva para la charla:
+
+    - **Línea A: temas [3](temas/03-disnea-blue.md) + [4](temas/04-lineas-b-ica.md).** Disnea aguda e insuficiencia cardiaca aguda: del protocolo BLUE a la descongestión guiada por líneas B.
+    - **Línea B: temas [5](temas/05-shock-rush.md) + [6](temas/06-fluidos-sepsis.md).** El paciente en shock: del tipo de shock con POCUS a la fluidoterapia guiada (VCI, medidas dinámicas y VExUS).
+
+    **Por qué:** los temas de cada pareja se complementan (diagnóstico y tratamiento del mismo problema clínico). Además, los dos pares eran las combinaciones sugeridas en la exploración. La investigación está en [Investigación](../02-investigacion/index.md).
+
 Diez temas POCUS candidatos para la sesión clínica de 20 minutos. Todos tienen respaldo en guías o consensos recientes. Aquí están comparados para que puedas **elegir uno**. Cada tema tiene su ficha, con las guías, la evidencia, las cifras clave, las controversias, el material visual disponible y una posible estructura de la charla.
 
 !!! abstract "Cómo usar esta página"

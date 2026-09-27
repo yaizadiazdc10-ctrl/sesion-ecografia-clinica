@@ -1,8 +1,31 @@
 # Estado del proyecto
 
-**Fase actual:** 2 — Esperando la elección del tema
+**Fase actual:** 3 — Investigación en curso (dos líneas en paralelo)
 
-**Tema elegido:** _pendiente_
+**Tema elegido:** decisión en dos pasos. El 2026-09-27 la usuaria eligió investigar **dos líneas combinadas**. Después de leerlas elegirá una (o una mezcla) para la charla:
+
+- **Línea A (temas 3 + 4):** ecografía pulmonar y cardiaca en la disnea aguda y la insuficiencia cardiaca aguda. Del protocolo BLUE a la descongestión guiada por líneas B.
+- **Línea B (temas 5 + 6):** el paciente en shock. Del tipo de shock con POCUS (RUSH y ecocardiografía) a la fluidoterapia guiada (VCI, medidas dinámicas y VExUS).
+
+Alcance acordado: investigación **lo más extensa posible, solo texto**. Los recursos gráficos se buscarán cuando se elija la línea definitiva.
+
+## Plan de investigación
+
+Para cada línea (`docs/02-investigacion/a-disnea-ica/` y `docs/02-investigacion/b-shock-fluidos/`):
+
+| # | Subtema | Preguntas |
+|---|---------|-----------|
+| 01 | Contexto y fundamento | Problema clínico, epidemiología, fisiopatología y bases físicas |
+| 02 | Técnica y protocolos | Sondas, ventanas, secuencias (BLUE, 8/28 zonas, RUSH, VCI, VTI, VExUS), hallazgos |
+| 03 | Precisión diagnóstica | Sensibilidad, especificidad y cocientes de probabilidad frente a la referencia y a la práctica habitual |
+| 04 | Impacto clínico | Decisiones, tiempos y resultados; ensayos clínicos |
+| 05 | Guías | Recomendaciones, clase y nivel, y diferencias entre sociedades |
+| 06 | Integración en la práctica | Algoritmos: a quién, cuándo y cómo documentarlo |
+| 07 | Limitaciones y errores | Falsos positivos y negativos, situaciones especiales, dependencia del operador |
+| 08 | Formación y competencia | Curvas de aprendizaje, número de exploraciones, acreditación |
+| 09 | Novedades y controversias | IA, estudios recientes, lagunas |
+| 10 | Casos clínicos | 1–2 casos ilustrativos ficticios |
+
 
 ## Temas candidatos
 
