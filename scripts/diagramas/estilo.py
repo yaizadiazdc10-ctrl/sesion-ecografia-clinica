@@ -1,4 +1,4 @@
-"""Estilo común para todos los diagramas del proyecto (misma paleta que la presentación).
+"""Estilo común para todos los diagramas del proyecto (misma paleta sobria que la presentación).
 
 Uso en un script de diagrama:
     from estilo import aplicar_estilo, guardar, PALETA
@@ -18,33 +18,51 @@ import matplotlib.pyplot as plt  # noqa: E402
 RAIZ = Path(__file__).resolve().parents[2]
 SALIDA = RAIZ / "docs" / "assets" / "diagramas"
 
+# Estilo sobrio y elegante: blanco y negro con escala de grises y un único acento morado.
+# El acento se reserva para lo que hay que mirar (el dato clave, la rama del algoritmo que importa).
+# El rosa oro es solo de la web: no se usa en diagramas ni en la presentación.
 PALETA = {
-    "primario": "#0F766E",
-    "acento": "#06B6D4",
-    "texto": "#1F2937",
-    "suave": "#6B7280",
-    "fondo_alt": "#F0FDFA",
-    "positivo": "#16A34A",
-    "alerta": "#F59E0B",
-    "negativo": "#DC2626",
+    "primario": "#111111",   # trazos y texto principal
+    "acento": "#5B3F8C",     # morado sobrio, con moderación
+    "acento_suave": "#E9E4F2",  # relleno tenue del acento (cajas destacadas)
+    "texto": "#1A1A1A",
+    "suave": "#707070",      # texto secundario, ejes
+    "linea": "#D4D4D4",      # rejillas y filetes
+    "fondo_alt": "#F5F5F5",  # cajas neutras
+    # Semántica sin semáforo: se distingue por tono/forma, no por rojo-verde
+    "positivo": "#5B3F8C",
+    "alerta": "#707070",
+    "negativo": "#111111",
 }
-SERIES = ["#0F766E", "#06B6D4", "#F59E0B", "#8B5CF6", "#DC2626", "#64748B"]
+# Series: negro, grises y morado al final para la serie que se quiere destacar
+SERIES = ["#111111", "#707070", "#A8A8A8", "#5B3F8C", "#D4D4D4"]
 
 
 def aplicar_estilo():
     plt.rcParams.update({
         "font.family": "sans-serif",
+        "font.sans-serif": ["Helvetica Neue", "Avenir Next", "Arial", "DejaVu Sans"],
         "font.size": 14,
         "axes.titlesize": 18,
-        "axes.titleweight": "bold",
+        "axes.titleweight": "normal",
+        "axes.titlelocation": "left",
+        "axes.titlepad": 14,
         "axes.titlecolor": PALETA["primario"],
         "axes.labelcolor": PALETA["texto"],
         "axes.edgecolor": PALETA["suave"],
+        "axes.linewidth": 0.8,
+        "axes.grid": False,
+        "grid.color": PALETA["linea"],
+        "grid.linewidth": 0.6,
+        "lines.linewidth": 1.8,
+        "legend.frameon": False,
         "axes.spines.top": False,
         "axes.spines.right": False,
         "axes.prop_cycle": plt.cycler(color=SERIES),
-        "xtick.color": PALETA["texto"],
-        "ytick.color": PALETA["texto"],
+        "xtick.color": PALETA["suave"],
+        "ytick.color": PALETA["suave"],
+        "xtick.labelcolor": PALETA["texto"],
+        "ytick.labelcolor": PALETA["texto"],
         "figure.facecolor": "white",
         "savefig.facecolor": "white",
     })

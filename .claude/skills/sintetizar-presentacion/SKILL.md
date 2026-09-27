@@ -40,6 +40,20 @@ Escribe `docs/03-sintesis/index.md` con:
 4. Preguntas previsibles del público con respuesta breve y referenciada.
 5. Enlace de descarga del .pptx una vez generado (copia el .pptx a `docs/assets/` para que se sirva desde la web).
 
+## Estilo visual: sobrio y elegante
+
+La presentación y los diagramas tienen **identidad propia, distinta de la web**: el rosa oro es exclusivo de la web y **no se usa** ni en el `.pptx` ni en los diagramas.
+
+- **Blanco y negro** como base: fondo blanco, texto casi negro (`#111111`/`#1A1A1A`), grises para lo secundario (`#707070`) y filetes finos (`#D4D4D4`).
+- **Un único color de acento, morado sobrio** (`#5B3F8C`; relleno tenue `#E9E4F2`), usado con moderación: el dato clave, la barra o rama del algoritmo que importa, un filete. Si todo está en morado, nada destaca.
+- **Nada estridente:** sin degradados, sombras, bloques de color de fondo, iconos decorativos, clip-art ni emojis. Nada de semáforos rojo/verde; se distingue por tono, grosor o forma.
+- **Tipografía:** Aptos / Aptos Display en el PowerPoint; Helvetica Neue en los diagramas. Pesos regulares en los títulos, negrita solo para énfasis puntual.
+- **Mucho aire:** márgenes amplios, pocos elementos por diapositiva, alineación a la izquierda.
+- Las diapositivas `mensaje` son la única excepción con fondo oscuro (negro), para marcar los mensajes clave.
+- Las imágenes descargadas (ecografías, infografías) se muestran tal cual, sin marcos de color.
+
+La paleta está en `TEMA_POR_DEFECTO` de [scripts/build_pptx.py](../../../scripts/build_pptx.py) y en `PALETA`/`SERIES` de [scripts/diagramas/estilo.py](../../../scripts/diagramas/estilo.py). No la sobrescribas con la clave `tema` del YAML salvo que el usuario lo pida.
+
 ## 4. Diagramas con scripts
 
 Para algoritmos, esquemas de protocolo, comparativas de sensibilidad y especificidad o gráficos de resultados de estudios:
@@ -55,6 +69,7 @@ Para algoritmos, esquemas de protocolo, comparativas de sensibilidad y especific
   ...
   guardar(fig, "nombre-descriptivo")  # → docs/assets/diagramas/nombre-descriptivo.png
   ```
+- Estilo (ver arriba): monocromo con el morado `PALETA["acento"]` solo para lo que hay que mirar; el resto en negro y grises (`PALETA["linea"]` para lo que no se destaca). Sin cuadrícula salvo que ayude a leer valores, sin recuadro de leyenda; mejor etiquetar directamente las series o las barras.
 - Los datos de los gráficos salen **de la investigación** y el script cita la fuente en un comentario. Texto en español y legible a distancia (≥14 pt).
 - Ejecuta con `.venv/bin/python scripts/diagramas/<nombre>.py` y **mira el PNG resultante** con Read antes de darlo por bueno.
 - Añade los diagramas a la galería de `docs/04-recursos/index.md`, en la sección "Diagramas propios".
@@ -86,12 +101,12 @@ diapositivas:
 .venv/bin/python scripts/build_pptx.py presentacion/diapositivas.yaml
 ```
 
-Si hace falta un tipo de diapositiva nuevo, amplía `build_pptx.py` manteniendo el estilo existente.
+Si hace falta un tipo de diapositiva nuevo, amplía `build_pptx.py` manteniendo el estilo sobrio existente (blanco y negro + acento morado).
 
 ## 6. Revisión visual con PowerPoint
 
 1. Exporta a PDF con PowerPoint: `scripts/exportar_pdf.sh presentacion/sesion-clinica.pptx`.
-2. Renderiza las páginas a PNG (pypdfium2) en el scratchpad, en cuadrículas de 6–9 diapositivas, y **revísalas con Read**. Busca texto desbordado o cortado, imágenes pixeladas o mal encuadradas, diapositivas recargadas y fuentes ausentes.
+2. Renderiza las páginas a PNG (pypdfium2) en el scratchpad, en cuadrículas de 6–9 diapositivas, y **revísalas con Read**. Busca texto desbordado o cortado, imágenes pixeladas o mal encuadradas, diapositivas recargadas y fuentes ausentes. Comprueba también que se mantiene sobria: si una diapositiva resulta llamativa o abusa del morado, simplifícala.
 3. Corrige en el YAML o en los scripts y regenera hasta que esté limpio.
 4. Comprueba el tiempo: suma los minutos del guion (objetivo 18–20 min).
 5. Abre el resultado para el usuario con `open presentacion/sesion-clinica.pptx`.

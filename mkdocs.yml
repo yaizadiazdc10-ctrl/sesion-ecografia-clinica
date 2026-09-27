@@ -1,28 +1,26 @@
 site_name: Sesión clínica POCUS
 site_description: Investigación, síntesis y recursos para una sesión clínica sobre ecografía a pie de cama
 site_author: Yaiza Díaz del Castillo
-repo_url: https://github.com/yaizadiazdc10-ctrl/sesion-ecografia-clinica
-repo_name: sesion-ecografia-clinica
-edit_uri: edit/main/docs/
 
 theme:
   name: material
+  custom_dir: overrides
   language: es
+  # Sin selector: el esquema sigue siempre la preferencia del sistema
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: cyan
-      toggle:
-        icon: material/weather-night
-        name: Modo oscuro
+      primary: custom
+      accent: custom
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
-      accent: cyan
-      toggle:
-        icon: material/weather-sunny
-        name: Modo claro
+      primary: custom
+      accent: custom
+  font:
+    text: Instrument Sans
+    code: JetBrains Mono
+  logo: assets/brand/logo.svg
+  favicon: assets/brand/logo.svg
   features:
     - navigation.tabs
     - navigation.sections
@@ -31,8 +29,13 @@ theme:
     - search.highlight
     - content.tabs.link
     - toc.follow
-  icon:
-    logo: material/heart-pulse
+    - navigation.footer
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false
 
 plugins:
   - search:

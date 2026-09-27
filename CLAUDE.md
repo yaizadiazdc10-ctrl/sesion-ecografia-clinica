@@ -44,6 +44,7 @@ No saltes fases: no se investiga a fondo sin tema elegido, y no se sintetiza sin
 - Nombres de archivo en minúsculas, con guiones, descriptivos: `docs/assets/img/<tema>-<descripcion>.png`.
 - Los **diagramas propios** se generan con scripts de Python en `scripts/` (matplotlib u otras librerías) y se guardan en `docs/assets/diagramas/`. El script debe poder regenerar la figura.
 - No incluir imágenes con datos identificables de pacientes.
+- **Dos identidades visuales:** la **web** usa la paleta rosa oro (`docs/stylesheets/extra.css`); la **presentación y los diagramas** son sobrios y elegantes: blanco y negro con grises y un único acento **morado** (`#5B3F8C`) usado con moderación. El rosa oro no se usa nunca en el `.pptx` ni en los diagramas.
 
 ## Estructura del repositorio
 
@@ -60,11 +61,15 @@ docs/                     ← contenido de la web (todo en Markdown)
   05-fuentes/             ← bibliografía completa
   assets/img/             ← imágenes descargadas
   assets/diagramas/       ← figuras generadas por scripts
+  assets/brand/           ← logo e imagen de portada (generados por scripts/web/graficos_web.py)
+  stylesheets/extra.css   ← estilo de la web (paleta rosa oro, tipografía, portada)
+overrides/                ← plantillas de Material: main.html (fuentes), home.html (portada)
 scripts/
   build_pptx.py           ← genera el .pptx desde presentacion/diapositivas.yaml
   exportar_pdf.sh         ← exporta el .pptx a PDF con PowerPoint (revisión visual)
   diagramas/estilo.py     ← paleta y estilo comunes para los diagramas
   diagramas/*.py          ← un script por diagrama → docs/assets/diagramas/
+  web/graficos_web.py     ← gráficos de identidad de la web (SVG)
 presentacion/             ← diapositivas.yaml (guion) y .pptx final
 .claude/skills/           ← skills del proyecto
 .claude/hooks/            ← hooks (commit + push al cerrar sesión)
@@ -76,6 +81,7 @@ presentacion/             ← diapositivas.yaml (guion) y .pptx final
 - Cita en el texto con el formato `[Autor, año](../05-fuentes/index.md#clave)` o nota al pie `[^clave]`, y añade la entrada correspondiente en `docs/05-fuentes/index.md`.
 - Formato de cada referencia en la bibliografía:
   `- <a id="clave"></a>**Autor A, Autor B, et al.** Título. *Revista*. Año;Vol(N):págs. PMID: xxxx · DOI: [xxxx](https://doi.org/xxxx) · Tipo: guía | RS/MA | ECA | observacional | revisión`
+- Estética de la web: paleta rosa oro definida en `docs/stylesheets/extra.css` (variables `--pc-*`); el modo claro/oscuro sigue al sistema, sin selector ni enlace al repositorio. La fase mostrada en la portada se cambia con `fase_actual` en el front matter de `docs/index.md`.
 - Usa admonitions de Material (`!!! note`, `!!! warning`, `!!! tip`) para perlas clínicas, errores frecuentes y mensajes clave.
 
 ## Entorno técnico

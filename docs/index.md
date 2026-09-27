@@ -1,16 +1,47 @@
-# Sesión clínica: ecografía a pie de cama (POCUS)
+---
+title: Inicio
+template: home.html
+fase_actual: 1
+hide:
+  - navigation
+  - toc
+---
 
-Esta web recoge todo el proceso de preparación de una **sesión clínica de 20 minutos** sobre un tema de ecografía clínica a pie de cama (*Point-of-Care Ultrasound*, POCUS), basada en guías y protocolos vigentes.
+## Cómo está organizada { .pc-seccion }
+
+<div class="grid cards pc-cards" markdown>
+
+-   **Exploración de temas**
+
+    Temas POCUS candidatos, su respaldo en guías y los criterios para elegir.
+
+    [Abrir →](01-exploracion/index.md)
+
+-   **Investigación**
+
+    Revisión en profundidad del tema elegido: evidencia, protocolos y estudios.
+
+    [Abrir →](02-investigacion/index.md)
+
+-   **Síntesis de la charla**
+
+    Guion y mensajes clave de la presentación de 20 minutos.
+
+    [Abrir →](03-sintesis/index.md)
+
+-   **Recursos**
+
+    Imágenes, infografías y diagramas para la presentación, con sus licencias.
+
+    [Abrir →](04-recursos/index.md)
+
+-   **Fuentes**
+
+    Bibliografía completa con PMID y DOI verificables.
+
+    [Abrir →](05-fuentes/index.md)
+
+</div>
 
 !!! info "Estado actual"
-    Fase 0: repositorio preparado. Siguiente paso: **exploración de temas candidatos**.
-
-## Cómo está organizada
-
-| Sección | Contenido |
-|---------|-----------|
-| [Exploración de temas](01-exploracion/index.md) | Temas POCUS candidatos, su respaldo en guías y los criterios para elegir |
-| [Investigación](02-investigacion/index.md) | Revisión en profundidad del tema elegido: evidencia, protocolos, estudios |
-| [Síntesis de la charla](03-sintesis/index.md) | Guion y mensajes clave de la presentación de 20 minutos |
-| [Recursos](04-recursos/index.md) | Imágenes, infografías y diagramas para la presentación |
-| [Fuentes](05-fuentes/index.md) | Bibliografía completa con PMID/DOI |
+    Repositorio preparado. Siguiente paso: **exploración de temas candidatos**.

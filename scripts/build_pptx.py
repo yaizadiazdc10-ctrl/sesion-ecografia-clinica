@@ -15,6 +15,10 @@ Tipos de diapositiva admitidos (campo `tipo`):
 
 Todas admiten `notas` (notas del orador). Un punto puede ser texto o {texto, sub: [..]}.
 Las rutas de imagen son relativas a la raíz del repositorio.
+
+Estilo: sobrio y elegante. Blanco y negro con escala de grises y un único acento morado,
+usado con moderación (filetes, viñetas, cifras destacadas). Sin bloques de color ni degradados.
+El rosa oro es exclusivo de la web: no se usa en la presentación.
 """
 
 import argparse
@@ -34,13 +38,16 @@ ANCHO, ALTO = Inches(13.333), Inches(7.5)
 MARGEN = Inches(0.6)
 
 TEMA_POR_DEFECTO = {
-    "primario": "0F766E",
-    "acento": "06B6D4",
-    "texto": "1F2937",
-    "suave": "6B7280",
+    "primario": "111111",    # títulos y texto principal (casi negro)
+    "acento": "5B3F8C",      # morado sobrio: único color, usar con moderación
+    "texto": "1A1A1A",
+    "suave": "707070",       # texto secundario, fuentes, numeración
+    "linea": "D4D4D4",       # filetes finos
     "fondo": "FFFFFF",
-    "fondo_alt": "F0FDFA",
-    "fuente": "Calibri",
+    "fondo_alt": "F5F5F5",   # gris muy claro (cabeceras de tabla, cajas)
+    "oscuro": "111111",      # fondo de las diapositivas de mensaje
+    "fuente": "Aptos",
+    "fuente_titulo": "Aptos Display",
 }
 
 
@@ -71,7 +78,7 @@ class Constructor:
         return shp
 
     def _texto(self, slide, x, y, w, h, texto, size=20, bold=False, color=None,
-               align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.TOP, italic=False):
+               align=PP_ALIGN.LEFT, anchor=MSO_ANCHOR.TOP, italic=False, fuente=None):
         tb = slide.shapes.add_textbox(x, y, w, h)
         tf = tb.text_frame
         tf.word_wrap = True
@@ -83,24 +90,28 @@ class Constructor:
             run.text = linea
             f = run.font
             f.size, f.bold, f.italic = Pt(size), bold, italic
-            f.name = self.tema["fuente"]
+            f.name = fuente or self.tema["fuente"]
             f.color.rgb = rgb(color or self.tema["texto"])
         return tb
 
+    def _linea(self, slide, x, y, w, color=None, grosor=Pt(0.75)):
+        return self._rect(slide, x, y, w, grosor, color or self.tema["linea"])
+
     def _titulo(self, slide, titulo):
-        self._rect(slide, 0, 0, ANCHO, Inches(0.12), self.tema["primario"])
-        self._texto(slide, MARGEN, Inches(0.35), ANCHO - 2 * MARGEN, Inches(0.9),
-                    titulo, size=32, bold=True, color=self.tema["primario"],
-                    anchor=MSO_ANCHOR.MIDDLE)
+        self._texto(slide, MARGEN, Inches(0.4), ANCHO - 2 * MARGEN, Inches(0.85),
+                    titulo, size=30, color=self.tema["primario"], anchor=MSO_ANCHOR.BOTTOM,
+                    fuente=self.tema["fuente_titulo"])
+        self._linea(slide, MARGEN, Inches(1.32), ANCHO - 2 * MARGEN)
+        self._linea(slide, MARGEN, Inches(1.32) - Pt(0.5), Inches(0.6), self.tema["acento"], Pt(1.75))
 
     def _pie(self, slide, fuente=None):
         self.numero += 1
-        y = ALTO - Inches(0.45)
+        y = ALTO - Inches(0.5)
         if fuente:
             self._texto(slide, MARGEN, y, ANCHO - Inches(2.2), Inches(0.35),
-                        f"Fuente: {fuente}", size=11, color=self.tema["suave"], italic=True)
-        self._texto(slide, ANCHO - Inches(1.4), y, Inches(0.8), Inches(0.35),
-                    str(self.numero), size=11, color=self.tema["suave"], align=PP_ALIGN.RIGHT)
+                        f"Fuente: {fuente}", size=10, color=self.tema["suave"])
+        self._texto(slide, ANCHO - MARGEN - Inches(0.8), y, Inches(0.8), Inches(0.35),
+                    str(self.numero), size=10, color=self.tema["suave"], align=PP_ALIGN.RIGHT)
 
     def _puntos(self, slide, x, y, w, h, puntos, size=None):
         n = sum(1 + len(p.get("sub", [])) if isinstance(p, dict) else 1 for p in puntos)
@@ -114,13 +125,13 @@ class Constructor:
             nonlocal primero
             p = tf.paragraphs[0] if primero else tf.add_paragraph()
             primero = False
-            p.space_after = Pt(8 if nivel == 0 else 4)
-            viñeta = "•  " if nivel == 0 else "–  "
+            p.space_after = Pt(12 if nivel == 0 else 4)
+            viñeta = "—  " if nivel == 0 else "·  "
             r1 = p.add_run()
             r1.text = ("      " * nivel) + viñeta
-            r1.font.color.rgb = rgb(self.tema["acento"])
+            r1.font.color.rgb = rgb(self.tema["acento"] if nivel == 0 else self.tema["suave"])
             r1.font.size = Pt(size - 4 * nivel)
-            r1.font.bold = True
+            r1.font.name = self.tema["fuente"]
             r2 = p.add_run()
             r2.text = str(texto)
             r2.font.size = Pt(size - 4 * nivel)
@@ -140,7 +151,7 @@ class Constructor:
         path = RAIZ / ruta
         if not path.exists():
             print(f"AVISO: imagen no encontrada: {ruta}", file=sys.stderr)
-            caja = self._rect(slide, x, y, w, h, "E5E7EB")
+            caja = self._rect(slide, x, y, w, h, self.tema["fondo_alt"])
             caja.text_frame.text = f"[Falta imagen]\n{ruta}"
             return
         with Image.open(path) as im:
@@ -156,32 +167,36 @@ class Constructor:
     # ---------- tipos de diapositiva ----------
     def portada(self, d):
         s = self.prs.slides.add_slide(self.blank)
-        self._fondo(s, self.tema["primario"])
-        self._rect(s, 0, ALTO - Inches(0.25), ANCHO, Inches(0.25), self.tema["acento"])
-        self._texto(s, MARGEN, Inches(2.0), ANCHO - 2 * MARGEN, Inches(2.0),
-                    d.get("titulo", self.guion.get("titulo", "")), size=44, bold=True,
-                    color="FFFFFF", anchor=MSO_ANCHOR.BOTTOM)
+        self._fondo(s, self.tema["fondo"])
+        self._linea(s, MARGEN, Inches(2.0), Inches(0.9), self.tema["acento"], Pt(2))
+        self._texto(s, MARGEN, Inches(2.2), ANCHO - 2 * MARGEN, Inches(2.0),
+                    d.get("titulo", self.guion.get("titulo", "")), size=48,
+                    color=self.tema["primario"], anchor=MSO_ANCHOR.TOP,
+                    fuente=self.tema["fuente_titulo"])
         sub = d.get("subtitulo", self.guion.get("subtitulo", ""))
         if sub:
-            self._texto(s, MARGEN, Inches(4.1), ANCHO - 2 * MARGEN, Inches(1.0), sub,
-                        size=24, color="E0F2F1")
-        meta = " · ".join(x for x in [self.guion.get("autora"), self.guion.get("fecha")] if x)
+            self._texto(s, MARGEN, Inches(4.2), ANCHO - 2 * MARGEN, Inches(1.0), sub,
+                        size=22, color=self.tema["suave"])
+        meta = "  ·  ".join(x for x in [self.guion.get("autora"), self.guion.get("fecha")] if x)
         if meta:
-            self._texto(s, MARGEN, Inches(5.6), ANCHO - 2 * MARGEN, Inches(0.6), meta,
-                        size=18, color="E0F2F1")
+            self._linea(s, MARGEN, ALTO - Inches(1.2), ANCHO - 2 * MARGEN)
+            self._texto(s, MARGEN, ALTO - Inches(1.05), ANCHO - 2 * MARGEN, Inches(0.5), meta,
+                        size=14, color=self.tema["suave"])
         self._notas(s, d)
         self.numero += 1
 
     def seccion(self, d):
         s = self.prs.slides.add_slide(self.blank)
-        self._fondo(s, self.tema["fondo_alt"])
-        self._rect(s, MARGEN, Inches(3.0), Inches(0.15), Inches(1.5), self.tema["acento"])
-        self._texto(s, MARGEN + Inches(0.4), Inches(2.8), ANCHO - 2 * MARGEN, Inches(1.2),
-                    d["titulo"], size=40, bold=True, color=self.tema["primario"],
-                    anchor=MSO_ANCHOR.MIDDLE)
+        self._fondo(s, self.tema["fondo"])
+        self.seccion_n = getattr(self, "seccion_n", 0) + 1
+        self._texto(s, MARGEN, Inches(2.2), Inches(3), Inches(0.5), f"{self.seccion_n:02d}",
+                    size=16, color=self.tema["acento"])
+        self._texto(s, MARGEN, Inches(2.7), ANCHO - 2 * MARGEN, Inches(1.4),
+                    d["titulo"], size=40, color=self.tema["primario"],
+                    anchor=MSO_ANCHOR.TOP, fuente=self.tema["fuente_titulo"])
         if d.get("subtitulo"):
-            self._texto(s, MARGEN + Inches(0.4), Inches(4.0), ANCHO - 2 * MARGEN, Inches(0.8),
-                        d["subtitulo"], size=22, color=self.tema["suave"])
+            self._texto(s, MARGEN, Inches(4.1), ANCHO - 2 * MARGEN, Inches(0.8),
+                        d["subtitulo"], size=20, color=self.tema["suave"])
         self._notas(s, d)
         self.numero += 1
 
@@ -223,9 +238,9 @@ class Constructor:
             x = MARGEN + i * (ancho + Inches(0.4))
             y = Inches(1.5)
             if col.get("titulo"):
-                self._rect(s, x, y, ancho, Inches(0.6), self.tema["fondo_alt"])
-                self._texto(s, x + Inches(0.15), y, ancho, Inches(0.6), col["titulo"], size=22,
+                self._texto(s, x, y, ancho, Inches(0.55), col["titulo"], size=20,
                             bold=True, color=self.tema["primario"], anchor=MSO_ANCHOR.MIDDLE)
+                self._linea(s, x, y + Inches(0.6), ancho)
                 y += Inches(0.8)
             self._puntos(s, x, y, ancho, ALTO - y - Inches(0.7), col.get("puntos", []), size=18)
         self._pie(s, d.get("fuente"))
@@ -249,23 +264,27 @@ class Constructor:
                         run.font.size = Pt(size)
                         run.font.name = self.tema["fuente"]
                         run.font.bold = r == 0
-                        run.font.color.rgb = rgb("FFFFFF" if r == 0 else self.tema["texto"])
+                        run.font.color.rgb = rgb(self.tema["primario"] if r == 0 else self.tema["texto"])
                 celda.fill.solid()
-                celda.fill.fore_color.rgb = rgb(
-                    self.tema["primario"] if r == 0 else
-                    (self.tema["fondo_alt"] if r % 2 == 0 else self.tema["fondo"]))
+                celda.fill.fore_color.rgb = rgb(self.tema["fondo_alt"] if r == 0 else self.tema["fondo"])
+        # Sin estilo de tabla de Office: filetes finos entre filas
+        t._tbl.tblPr.set("bandRow", "0")
+        t._tbl.tblPr.set("firstRow", "0")
+        for r in range(1, len(filas) + 1):
+            self._linea(s, MARGEN, Inches(1.6) + alto_fila * r, ANCHO - 2 * MARGEN)
         self._pie(s, d.get("fuente"))
         self._notas(s, d)
 
     def mensaje(self, d):
         s = self.prs.slides.add_slide(self.blank)
-        self._fondo(s, self.tema["primario"])
-        self._texto(s, Inches(1.2), Inches(1.8), ANCHO - Inches(2.4), Inches(2.8), d["texto"],
-                    size=36, bold=True, color="FFFFFF", align=PP_ALIGN.CENTER,
-                    anchor=MSO_ANCHOR.MIDDLE)
+        self._fondo(s, self.tema["oscuro"])
+        self._linea(s, (ANCHO - Inches(0.9)) // 2, Inches(1.9), Inches(0.9), "9C85C4", Pt(2))
+        self._texto(s, Inches(1.4), Inches(2.1), ANCHO - Inches(2.8), Inches(2.6), d["texto"],
+                    size=36, color="FFFFFF", align=PP_ALIGN.CENTER,
+                    anchor=MSO_ANCHOR.MIDDLE, fuente=self.tema["fuente_titulo"])
         if d.get("subtexto"):
-            self._texto(s, Inches(1.2), Inches(4.8), ANCHO - Inches(2.4), Inches(1.2),
-                        d["subtexto"], size=20, color="E0F2F1", align=PP_ALIGN.CENTER)
+            self._texto(s, Inches(1.4), Inches(4.8), ANCHO - Inches(2.8), Inches(1.2),
+                        d["subtexto"], size=18, color="BDBDBD", align=PP_ALIGN.CENTER)
         self._notas(s, d)
         self.numero += 1
 

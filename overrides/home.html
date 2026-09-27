@@ -1,0 +1,55 @@
+{% extends "main.html" %}
+
+{#- Portada: hero con el sector ecográfico y el recorrido por fases.
+    La fase actual se toma de `fase_actual` en el front matter de docs/index.md. -#}
+{% set fases = [
+  ("Exploración", "Temas candidatos con respaldo en guías", "01-exploracion/"),
+  ("Elección", "Decisión del tema de la sesión", "01-exploracion/"),
+  ("Investigación", "Guías, revisiones y estudios clave", "02-investigacion/"),
+  ("Recursos", "Imágenes con licencia y diagramas", "04-recursos/"),
+  ("Síntesis", "Guion de 20 minutos", "03-sintesis/"),
+  ("Presentación", "Diapositivas y notas del orador", "03-sintesis/"),
+] %}
+{% set actual = page.meta.fase_actual | default(1) | int %}
+
+{% block tabs %}
+  {{ super() }}
+  <section class="pc-hero">
+    <div class="md-grid pc-hero__grid">
+      <div class="pc-hero__texto">
+        <p class="pc-eyebrow">Sesión clínica · 20 minutos</p>
+        <h1 class="pc-hero__titulo">Ecografía <em>a pie de cama</em></h1>
+        <p class="pc-hero__lead">
+          Preparación de una sesión sobre POCUS para médicos y residentes:
+          del protocolo a la decisión clínica, con cada dato respaldado por
+          guías vigentes y estudios verificables.
+        </p>
+        <div class="pc-hero__acciones">
+          <a href="{{ '01-exploracion/' | url }}" class="md-button md-button--primary">Ver temas candidatos</a>
+          <a href="{{ '05-fuentes/' | url }}" class="md-button">Fuentes</a>
+        </div>
+      </div>
+      <figure class="pc-hero__figura" aria-hidden="true">
+        <img src="{{ 'assets/brand/hero-sector.svg' | url }}" alt="" width="600" height="540">
+      </figure>
+    </div>
+  </section>
+  <section class="pc-fases" aria-label="Fases del proyecto">
+    <ol class="md-grid pc-fases__lista">
+      {% for nombre, detalle, enlace in fases %}
+        {% set n = loop.index %}
+        <li class="pc-fase {% if n < actual %}pc-fase--hecha{% elif n == actual %}pc-fase--actual{% endif %}">
+          <a href="{{ enlace | url }}">
+            <span class="pc-fase__num">{{ "%02d" | format(n) }}</span>
+            <span class="pc-fase__nombre">{{ nombre }}</span>
+            <span class="pc-fase__detalle">{{ detalle }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+{% endblock %}
+
+{% block content %}
+  {{ page.content }}
+{% endblock %}

@@ -56,7 +56,7 @@ Antes de escribir nada en la web:
 
 - Un archivo por subtema: `docs/02-investigacion/NN-slug.md` (p. ej. `03-precision-diagnostica.md`). Usa encabezados claros, tablas de estudios, admonitions (`!!! tip "Perla clínica"`, `!!! warning "Error frecuente"`) y citas enlazadas a la bibliografía.
 - `docs/02-investigacion/index.md`: resumen ejecutivo del tema (10–15 líneas), índice de subtemas y una **tabla de evidencia** con los estudios clave.
-- Diagramas simples (algoritmos, flujos) pueden ir como bloques ` ```mermaid ` en la web. Los que irán en la presentación se generan como PNG en la fase de síntesis.
+- Diagramas simples (algoritmos, flujos) pueden ir como bloques ` ```mermaid ` en la web. Los que irán en la presentación se generan como PNG en la fase de síntesis, con el estilo sobrio de la presentación (blanco y negro + acento morado; ver la skill `sintetizar-presentacion`), no con el rosa oro de la web.
 - `docs/05-fuentes/index.md`: todas las referencias con el formato de CLAUDE.md, clasificadas por tipo.
 - Añade cada página nueva al `nav` de `mkdocs.yml`.
 
