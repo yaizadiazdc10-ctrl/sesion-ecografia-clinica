@@ -82,7 +82,7 @@ nav:
       - Otros temas considerados: 01-exploracion/otros-temas.md
   - Investigación:
       - 02-investigacion/index.md
-      - Línea A · Disnea e ICA:
+      - Disnea aguda e ICA:
           - 02-investigacion/a-disnea-ica/index.md
           - "01 · Contexto y fundamento": 02-investigacion/a-disnea-ica/01-contexto.md
           - "02 · Técnica y protocolos": 02-investigacion/a-disnea-ica/02-tecnica.md
@@ -94,18 +94,6 @@ nav:
           - "08 · Formación y competencia": 02-investigacion/a-disnea-ica/08-formacion.md
           - "09 · Novedades y controversias": 02-investigacion/a-disnea-ica/09-novedades.md
           - "10 · Casos clínicos": 02-investigacion/a-disnea-ica/10-casos.md
-      - Línea B · Shock y fluidos:
-          - 02-investigacion/b-shock-fluidos/index.md
-          - "01 · Contexto y fundamento": 02-investigacion/b-shock-fluidos/01-contexto.md
-          - "02 · Técnica y protocolos": 02-investigacion/b-shock-fluidos/02-tecnica.md
-          - "03 · Precisión diagnóstica": 02-investigacion/b-shock-fluidos/03-precision.md
-          - "04 · Impacto clínico": 02-investigacion/b-shock-fluidos/04-impacto.md
-          - "05 · Qué dicen las guías": 02-investigacion/b-shock-fluidos/05-guias.md
-          - "06 · Integración en la práctica": 02-investigacion/b-shock-fluidos/06-practica.md
-          - "07 · Limitaciones y errores": 02-investigacion/b-shock-fluidos/07-limitaciones.md
-          - "08 · Formación y competencia": 02-investigacion/b-shock-fluidos/08-formacion.md
-          - "09 · Novedades y controversias": 02-investigacion/b-shock-fluidos/09-novedades.md
-          - "10 · Casos clínicos": 02-investigacion/b-shock-fluidos/10-casos.md
   - Síntesis de la charla:
       - 03-sintesis/index.md
   - Recursos:

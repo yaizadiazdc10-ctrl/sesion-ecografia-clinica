@@ -1,7 +1,7 @@
 ---
 title: Inicio
 template: home.html
-fase_actual: 2
+fase_actual: 5
 hide:
   - navigation
   - toc
@@ -44,4 +44,4 @@ hide:
 </div>
 
 !!! info "Estado actual"
-    Exploración terminada: hay **10 temas candidatos** comparados y documentados. Siguiente paso: **elegir el tema** de la sesión en [Exploración de temas](01-exploracion/index.md).
+    **Tema elegido:** disnea aguda e insuficiencia cardiaca aguda (protocolo BLUE y líneas B). La investigación está completa y hay una [versión preliminar de la síntesis](03-sintesis/index.md) de la charla.

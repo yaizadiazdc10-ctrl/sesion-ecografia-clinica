@@ -1,31 +1,18 @@
 # Investigación
 
-La usuaria decidió investigar **dos líneas** en paralelo, cada una combinando dos temas de la [exploración](../01-exploracion/index.md). Después de leerlas se elegirá la definitiva (o una mezcla) para la charla.
+**Tema de la sesión:** ecografía pulmonar y cardiaca en la disnea aguda y la insuficiencia cardiaca aguda (ICA). Del protocolo BLUE a la descongestión guiada por líneas B.
+
+Es material de lectura de fondo, **lo más extenso posible**, organizado en 10 subtemas. El recorte para la charla de 20 minutos está en [Síntesis](../03-sintesis/index.md).
 
 <div class="grid cards" markdown>
 
--   **Línea A · Disnea aguda e ICA**
+-   **Disnea aguda e ICA**
 
     Protocolo BLUE, líneas B frente a radiografía y péptidos natriuréticos, descongestión guiada por ecografía y congestión residual al alta.
 
-    [Abrir línea A →](a-disnea-ica/index.md)
-
--   **Línea B · El paciente en shock**
-
-    RUSH y ecocardiografía para el tipo de shock. Respuesta y tolerancia a fluidos: VCI, VTI con elevación pasiva de piernas y VExUS.
-
-    [Abrir línea B →](b-shock-fluidos/index.md)
+    [Abrir la investigación →](a-disnea-ica/index.md)
 
 </div>
 
-## Estado
-
-!!! warning "Investigación en curso"
-    Esta es una **primera entrega parcial**, publicada al cerrar la sesión del 27 de septiembre de 2026.
-
-    - **Línea A:** publicados precisión diagnóstica, impacto clínico, formación y novedades.
-    - **Línea B:** publicados contexto, técnica, impacto clínico, limitaciones y novedades.
-
-    El resto de subtemas aparecen como «En preparación» en el índice de cada línea.
-
-Cada línea sigue el mismo plan de 10 subtemas: contexto, técnica, precisión diagnóstica, impacto clínico, guías, práctica, limitaciones, formación, novedades y casos clínicos.
+!!! note "Línea descartada"
+    También se investigó una segunda línea sobre el paciente en shock (RUSH, VCI, medidas dinámicas y VExUS). Tras leer la primera entrega se descartó y se retiró de la web. Su contenido está en el historial del repositorio (commits `b1af0df` y `7c35766`).

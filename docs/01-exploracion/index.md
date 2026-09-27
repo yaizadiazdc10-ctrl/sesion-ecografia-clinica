@@ -2,13 +2,23 @@
 
 ## Tema elegido
 
-!!! success "Decisión (27 de septiembre de 2026): dos líneas de investigación"
-    En lugar de un único tema, se investigan a fondo **dos líneas que combinan temas**. Después de leerlas se elegirá la definitiva para la charla:
+!!! success "Tema de la sesión: disnea aguda e insuficiencia cardiaca aguda (temas 3 + 4)"
+    **Ecografía pulmonar y cardiaca en la disnea aguda y la ICA: del protocolo BLUE a la descongestión guiada por líneas B.** Combina los temas [3](temas/03-disnea-blue.md) y [4](temas/04-lineas-b-ica.md).
 
-    - **Línea A: temas [3](temas/03-disnea-blue.md) + [4](temas/04-lineas-b-ica.md).** Disnea aguda e insuficiencia cardiaca aguda: del protocolo BLUE a la descongestión guiada por líneas B.
-    - **Línea B: temas [5](temas/05-shock-rush.md) + [6](temas/06-fluidos-sepsis.md).** El paciente en shock: del tipo de shock con POCUS a la fluidoterapia guiada (VCI, medidas dinámicas y VExUS).
+    La decisión se tomó en dos pasos:
 
-    **Por qué:** los temas de cada pareja se complementan (diagnóstico y tratamiento del mismo problema clínico). Además, los dos pares eran las combinaciones sugeridas en la exploración. La investigación está en [Investigación](../02-investigacion/index.md).
+    1. **27 de septiembre de 2026:** se investigaron a fondo dos líneas combinadas:
+        - línea A: temas 3 y 4, disnea e ICA;
+        - línea B: temas 5 y 6, shock y fluidos.
+    2. **Tras leer la primera entrega:** se eligió la **línea A**. La línea B se descartó y se retiró de la web; queda en el historial del repositorio.
+
+    **Por qué la línea A:**
+    - Resuelve un problema diario de planta y urgencias.
+    - La técnica es accesible para residentes.
+    - Tiene evidencia reciente con debate (metaanálisis de 2026 sobre el tratamiento guiado por líneas B y el ECA danés de 2026).
+    - Tiene respaldo de sociedades españolas (SEMI 2025).
+
+    La investigación está en [Investigación](../02-investigacion/index.md) y el borrador de la charla, en [Síntesis](../03-sintesis/index.md).
 
 Diez temas POCUS candidatos para la sesión clínica de 20 minutos. Todos tienen respaldo en guías o consensos recientes. Aquí están comparados para que puedas **elegir uno**. Cada tema tiene su ficha, con las guías, la evidencia, las cifras clave, las controversias, el material visual disponible y una posible estructura de la charla.
 
