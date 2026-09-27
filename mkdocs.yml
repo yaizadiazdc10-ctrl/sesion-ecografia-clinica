@@ -1,0 +1,76 @@
+site_name: Sesión clínica POCUS
+site_description: Investigación, síntesis y recursos para una sesión clínica sobre ecografía a pie de cama
+site_author: Yaiza Díaz del Castillo
+repo_url: https://github.com/yaizadiazdc10-ctrl/sesion-ecografia-clinica
+repo_name: sesion-ecografia-clinica
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: es
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.highlight
+    - content.tabs.link
+    - toc.follow
+  icon:
+    logo: material/heart-pulse
+
+plugins:
+  - search:
+      lang: es
+  - glightbox
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Inicio: index.md
+  - Exploración de temas:
+      - 01-exploracion/index.md
+  - Investigación:
+      - 02-investigacion/index.md
+  - Síntesis de la charla:
+      - 03-sintesis/index.md
+  - Recursos:
+      - 04-recursos/index.md
+      - Créditos de imágenes: 04-recursos/creditos.md
+  - Fuentes:
+      - 05-fuentes/index.md
