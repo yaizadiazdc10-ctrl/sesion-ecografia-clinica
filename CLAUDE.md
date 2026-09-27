@@ -60,8 +60,12 @@ docs/                     ← contenido de la web (todo en Markdown)
   05-fuentes/             ← bibliografía completa
   assets/img/             ← imágenes descargadas
   assets/diagramas/       ← figuras generadas por scripts
-scripts/                  ← generación de diagramas y del .pptx (Python)
-presentacion/             ← .pptx final
+scripts/
+  build_pptx.py           ← genera el .pptx desde presentacion/diapositivas.yaml
+  exportar_pdf.sh         ← exporta el .pptx a PDF con PowerPoint (revisión visual)
+  diagramas/estilo.py     ← paleta y estilo comunes para los diagramas
+  diagramas/*.py          ← un script por diagrama → docs/assets/diagramas/
+presentacion/             ← diapositivas.yaml (guion) y .pptx final
 .claude/skills/           ← skills del proyecto
 .claude/hooks/            ← hooks (commit + push al cerrar sesión)
 ```

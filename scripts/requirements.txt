@@ -2,3 +2,5 @@ python-pptx>=1.0
 matplotlib>=3.8
 Pillow>=10
 requests>=2.31
+pyyaml>=6
+pypdfium2>=4
