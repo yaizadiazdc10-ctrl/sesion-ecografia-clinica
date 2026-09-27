@@ -1,52 +1,58 @@
 # Estado del proyecto
 
-**Fase actual:** 3 — Investigación en curso (dos líneas en paralelo; primera entrega parcial publicada)
+**Fase actual:** 5 — Síntesis preliminar publicada, pendiente de revisión por la usuaria
 
-**Tema elegido:** decisión en dos pasos. El 2026-09-27 la usuaria eligió investigar **dos líneas combinadas**. Después de leerlas elegirá una (o una mezcla) para la charla:
+**Tema elegido:** **ecografía pulmonar y cardiaca en la disnea aguda y la insuficiencia cardiaca aguda. Del protocolo BLUE a la descongestión guiada por líneas B** (línea A, que combina los temas 3 y 4).
 
-- **Línea A (temas 3 + 4):** ecografía pulmonar y cardiaca en la disnea aguda y la insuficiencia cardiaca aguda. Del protocolo BLUE a la descongestión guiada por líneas B.
-- **Línea B (temas 5 + 6):** el paciente en shock. Del tipo de shock con POCUS (RUSH y ecocardiografía) a la fluidoterapia guiada (VCI, medidas dinámicas y VExUS).
+- Se investigaron dos líneas y, tras leer la primera entrega, la usuaria eligió la A.
+- La línea B (shock y fluidos) se descartó y se retiró de la web; queda en los commits `b1af0df` y `7c35766`.
 
-Alcance acordado: investigación **lo más extensa posible, solo texto**. Los recursos gráficos se buscarán cuando se elija la línea definitiva.
+## Investigación (completa)
 
-## Plan de investigación
+`docs/02-investigacion/a-disnea-ica/` tiene los 10 subtemas publicados:
 
-Para cada línea (`docs/02-investigacion/a-disnea-ica/` y `docs/02-investigacion/b-shock-fluidos/`):
+1. contexto;
+2. técnica;
+3. precisión diagnóstica;
+4. impacto clínico;
+5. guías;
+6. práctica;
+7. limitaciones;
+8. formación;
+9. novedades;
+10. casos clínicos.
 
-| # | Subtema | Preguntas |
-|---|---------|-----------|
-| 01 | Contexto y fundamento | Problema clínico, epidemiología, fisiopatología y bases físicas |
-| 02 | Técnica y protocolos | Sondas, ventanas, secuencias (BLUE, 8/28 zonas, RUSH, VCI, VTI, VExUS), hallazgos |
-| 03 | Precisión diagnóstica | Sensibilidad, especificidad y cocientes de probabilidad frente a la referencia y a la práctica habitual |
-| 04 | Impacto clínico | Decisiones, tiempos y resultados; ensayos clínicos |
-| 05 | Guías | Recomendaciones, clase y nivel, y diferencias entre sociedades |
-| 06 | Integración en la práctica | Algoritmos: a quién, cuándo y cómo documentarlo |
-| 07 | Limitaciones y errores | Falsos positivos y negativos, situaciones especiales, dependencia del operador |
-| 08 | Formación y competencia | Curvas de aprendizaje, número de exploraciones, acreditación |
-| 09 | Novedades y controversias | IA, estudios recientes, lagunas |
-| 10 | Casos clínicos | 1–2 casos ilustrativos ficticios |
+La bibliografía tiene 348 referencias citadas, verificadas en PubMed. Solo texto: aún no hay recursos gráficos.
 
+## Síntesis preliminar
 
-## Avance de la investigación (2026-09-27)
+`docs/03-sintesis/` contiene:
 
-- **Línea A publicada:** 03 precisión diagnóstica, 04 impacto clínico, 08 formación, 09 novedades.
-- **Línea A pendiente:** 01 contexto, 02 técnica, 05 guías, 06 práctica, 07 limitaciones, 10 casos.
-- **Línea B publicada:** 01 contexto, 02 técnica, 04 impacto clínico, 07 limitaciones, 09 novedades.
-- **Línea B pendiente:** 03 precisión diagnóstica, 05 guías, 06 práctica, 08 formación, 10 casos.
-- Los subtemas pendientes aparecen como «En preparación» en la web.
-- Al cerrar la sesión, varios agentes seguían escribiendo borradores en el scratchpad de la sesión (`inv/A`, `inv/B`), que es temporal. En la próxima sesión hay que **relanzar** los subtemas que falten con la skill `investigar-tema`: A-01, A-02, A-05, A-06, A-07, A-10, B-03, B-05, B-06, B-08 y B-10. Las páginas publicadas se reutilizan.
-- Bibliografía: 410 referencias. Las nuevas se han comprobado con esummary de PubMed. `meyhoff2022` se ha unificado en `classic2022`, y `prager2023` se ha corregido a protocolo de estudio de cohortes.
-- **Controversias destacadas** para decidir entre las líneas:
-    - **Línea A:**
-        - el ECA pragmático danés de 2026 (Ovesen) es negativo;
-        - los metaanálisis de 2026 sobre el tratamiento guiado por líneas B discrepan en las hospitalizaciones y ninguno reduce la mortalidad;
-        - los pilotos en fase aguda (BLUSHED-AHF, EPICC) son negativos.
-    - **Línea B:**
-        - SHoC-ED es negativo;
-        - los metaanálisis de ecografía y mortalidad discrepan según la población;
-        - CLASSIC, CLOVERS y ARISE FLUIDS son neutros;
-        - VExUS solo tiene evidencia observacional.
-- **Pendientes [POR VERIFICAR]** más relevantes: textos literales de SSC 2026, ESICM 2025 y ACEP 2023, y cifras de formación de SEMI y EACVI (ver cada página).
+- **`index.md`:** los 3 mensajes clave, la estructura de 20 min en 4 bloques, lo pendiente de verificar y las preguntas previsibles.
+- **`resumen-ampliado.md`:** lectura de preparación de 11 apartados con cifras referenciadas.
+- **`esquema-diapositivas.md`:** 20 diapositivas repartidas en 4 bloques (A 1–5, B 6–11, C 12–16, D 17–20), con el contenido, el visual, la fuente, el tiempo y las notas de cada una, más la lista de visuales necesarios.
+
+Los mensajes clave son:
+
+1. Patrón para diagnosticar.
+2. Perfil A: mira las piernas y el corazón.
+3. Número para seguir la evolución, y al alta.
+
+## Próximos pasos
+
+- [ ] La usuaria revisa el resumen ampliado y el esquema; cambios en los mensajes, el orden o el reparto
+- [ ] **Verificar la guía ESC 2026 de IC** (texto completo). Puede cambiar el mensaje 3 y la diapositiva 17
+- [ ] Verificar la actualización internacional de LUS 2025/2026, el texto completo de SEMI 2025 y la carta de Kumar 2026
+- [ ] Fase 4, recursos:
+    - buscar y descargar las imágenes con licencia (patrón B, perfil A, consolidación, derrame, FoCUS con FEVI deprimida, vena no compresible);
+    - registrarlas en `creditos.md`
+- [ ] Diagramas propios con scripts (estilo sobrio con morado):
+    - espectro de aireación;
+    - las 8 zonas;
+    - árbol BLUE;
+    - sensibilidad de LUS frente a Rx;
+    - *forest plot* de los metaanálisis de 2026
+- [ ] Fase 6: `presentacion/diapositivas.yaml` → `.pptx` y revisión visual
 
 ## Temas candidatos
 
@@ -86,3 +92,4 @@ Recomendación de Claude: 7, 4 y 1. La decisión es de la usuaria. Hay otros 14 
 | 2026-09-27 | Estilo sobrio para la presentación y los diagramas (blanco y negro + acento morado, tipografía Aptos), documentado en las skills y en CLAUDE.md. El rosa oro queda solo para la web. |
 | 2026-09-27 | **Fase 1 completada.** Barrido en paralelo de 7 áreas POCUS. Resultado: 10 temas candidatos, cada uno con su ficha (guías, evidencia, cifras, controversias, material visual, estructura de la charla y comentario), una tabla comparativa, una guía de elección según la audiencia y una recomendación. Además, 14 temas descartados en fichas breves. Bibliografía de 119 referencias verificadas en PubMed. Portada en fase 2. |
 | 2026-09-27 | **Fase 3 (parcial).** Decisión: investigar dos líneas combinadas, A (temas 3 + 4) y B (temas 5 + 6), solo texto. Se lanzaron 8 agentes en paralelo. Se publican 9 de los 20 subtemas (4 de la línea A y 5 de la línea B), con índices y navegación. La bibliografía pasa de 119 a 410 referencias verificadas. El resto de subtemas quedan «En preparación» y hay que relanzarlos en la próxima sesión. |
+| 2026-09-27 | **Elección definitiva: línea A.** Línea B descartada y retirada de la web. Se completan con 4 agentes los 6 subtemas pendientes de la línea A (01, 02, 05, 06, 07 y 10) y se verifican 258 referencias nuevas; la bibliografía queda en 348. **Síntesis preliminar:** 3 mensajes clave, resumen ampliado y esquema de 20 diapositivas en 4 bloques para repartir. |
