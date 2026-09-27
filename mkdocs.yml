@@ -68,6 +68,18 @@ nav:
   - Inicio: index.md
   - Exploración de temas:
       - 01-exploracion/index.md
+      - Temas candidatos:
+          - 1. Parada cardiaca: 01-exploracion/temas/01-parada-cardiaca.md
+          - 2. Taponamiento: 01-exploracion/temas/02-taponamiento.md
+          - 3. Disnea aguda (BLUE): 01-exploracion/temas/03-disnea-blue.md
+          - 4. Líneas B en la ICA: 01-exploracion/temas/04-lineas-b-ica.md
+          - 5. Shock indiferenciado: 01-exploracion/temas/05-shock-rush.md
+          - 6. Fluidos en la sepsis: 01-exploracion/temas/06-fluidos-sepsis.md
+          - 7. TVP con compresión: 01-exploracion/temas/07-tvp-compresion.md
+          - 8. Cólico renal: 01-exploracion/temas/08-colico-renal.md
+          - 9. Bloqueo de cadera: 01-exploracion/temas/09-bloqueo-cadera.md
+          - 10. Estómago y GLP-1: 01-exploracion/temas/10-gastrica-glp1.md
+      - Otros temas considerados: 01-exploracion/otros-temas.md
   - Investigación:
       - 02-investigacion/index.md
   - Síntesis de la charla:

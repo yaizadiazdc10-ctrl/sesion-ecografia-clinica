@@ -1,7 +1,7 @@
 ---
 title: Inicio
 template: home.html
-fase_actual: 1
+fase_actual: 2
 hide:
   - navigation
   - toc
@@ -44,4 +44,4 @@ hide:
 </div>
 
 !!! info "Estado actual"
-    Repositorio preparado. Siguiente paso: **exploración de temas candidatos**.
+    Exploración terminada: hay **10 temas candidatos** comparados y documentados. Siguiente paso: **elegir el tema** de la sesión en [Exploración de temas](01-exploracion/index.md).
