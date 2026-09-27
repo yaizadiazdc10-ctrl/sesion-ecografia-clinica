@@ -1,0 +1,246 @@
+# Guion de la presentación: versión de prueba 0.1, sin imágenes ni diagramas.
+# Fuente del contenido: docs/03-sintesis/esquema-diapositivas.md
+titulo: "Ecografía pulmonar en la disnea aguda y la insuficiencia cardiaca aguda"
+subtitulo: "Del protocolo BLUE a la descongestión guiada por líneas B"
+autora: "Yaiza Díaz del Castillo"
+fecha: "Borrador · septiembre 2026"
+archivo: sesion-clinica.pptx
+diapositivas:
+  # ---------- Bloque A · Apertura y fundamento (5 min) ----------
+  - tipo: portada
+    notas: |
+      Presentación breve. Objetivo: que mañana podáis usar el ecógrafo ante un paciente con disnea.
+
+  - tipo: contenido
+    titulo: "Caso 1 · «La radiografía no lo aclara»"
+    puntos:
+      - "Varón de 74 años: HTA, DM, EPOC leve"
+      - "Disnea de 4 días, ortopnea. SpO₂ 88 %, FR 28"
+      - "Sibilancias difusas y crepitantes basales"
+      - "Rx AP en decúbito: ¿redistribución o infiltrado?"
+      - "NT-proBNP pendiente: 60–90 min"
+      - {texto: "¿Probabilidad de ICA?", sub: ["< 25 %  ·  25–75 %  ·  > 75 %"]}
+    fuente: "Caso ficticio con fines docentes"
+    notas: |
+      Votación a mano alzada. No dar la respuesta: se retoma en la resolución del caso.
+      El residente plantea salbutamol y antibiótico «por si acaso» mientras llega el péptido.
+
+  - tipo: tabla
+    titulo: "El problema: la clínica y la radiografía fallan"
+    cabecera: ["Dato", "Cifra"]
+    filas:
+      - ["Disnea aguda en urgencias", "≈ 5 % de las visitas; la IC es la 2.ª causa"]
+      - ["Tras un ingreso por ICA", "Hasta el 45 % reingresa o muere en 1 año"]
+      - ["Ausencia de crepitantes", "LR− de solo 0,51"]
+      - ["Radiografía de tórax", "Normal en 1 de cada 5 ICA"]
+    fuente: "Kelly 2017 · Gargani 2023 · Wang 2005 · Collins 2006"
+    notas: |
+      La clínica y la radiografía fallan justo cuando más las necesitamos. Si el tratamiento inicial
+      es inapropiado, la mortalidad del anciano con insuficiencia respiratoria es del 25 % frente al 11 % (Ray 2006).
+
+  - tipo: contenido
+    titulo: "Del aire al agua: líneas A y líneas B"
+    puntos:
+      - "El pulmón aireado solo produce artefactos"
+      - "Líneas A: reverberación de la pleura, pulmón aireado"
+      - "Líneas B: septos engrosados y agua extravascular"
+      - "Líneas A → líneas B → confluentes → consolidación"
+    fuente: "Demi 2023 · Lichtenstein 1997"
+    notas: |
+      En 30 segundos: por qué el agua cambia el artefacto. Las líneas B reflejan el agua pulmonar
+      mejor que la presión de enclavamiento. [Pendiente: diagrama del espectro de aireación]
+
+  - tipo: dos_columnas
+    titulo: "Qué es (y qué no es) una línea B"
+    izquierda:
+      titulo: "Definición"
+      puntos:
+        - "Nace de la pleura y llega al fondo"
+        - "Se mueve con el deslizamiento"
+        - "Borra las líneas A"
+        - "≥ 3 por espacio = zona positiva"
+    derecha:
+      titulo: "¿Cardiogénica o no?"
+      puntos:
+        - "Cardiogénica: bilateral, homogénea, pleura fina"
+        - "No cardiogénica: parcheada, pleura irregular"
+        - "Consolidaciones → neumonía o SDRA"
+    fuente: "Volpicelli 2012 · Gargani 2023 · Copetti 2008"
+    notas: |
+      Adelantar que las líneas B no son sinónimo de IC. Las líneas Z no llegan al fondo y no son líneas B.
+      [Pendiente: clip de línea B anotada]
+
+  # ---------- Bloque B · Técnica y diagnóstico (7 min) ----------
+  - tipo: contenido
+    titulo: "Configura el equipo para el pulmón"
+    puntos:
+      - "Preset pulmonar o abdominal"
+      - "Sin armónicos, sin filtros, sin compuesto"
+      - "Foco en la pleura, índice mecánico bajo"
+      - "Convexa o microconvexa; lineal para la pleura"
+      - "Para seguir al paciente: misma sonda, preset y postura"
+    fuente: "Demi 2023 · Gargani 2023 · Platz 2015"
+    notas: |
+      Es el error técnico más frecuente: los filtros «limpian» precisamente las líneas B.
+
+  - tipo: contenido
+    titulo: "El protocolo de 8 zonas (EACVI)"
+    puntos:
+      - "4 zonas por hemitórax: anterior y lateral, superior e inferior"
+      - "Contar en el peor punto; clips de unos 6 s"
+      - "Confluentes: % de pantalla ÷ 10"
+      - {texto: "Edema:", sub: ["≥ 3 líneas B por zona", "≥ 2 zonas por hemitórax, bilateral"]}
+    fuente: "Gargani 2023 (consenso EACVI) · Buessler 2020"
+    notas: |
+      Los protocolos de 4, 8 y 28 zonas tienen umbrales distintos y no intercambiables.
+      [Pendiente: diagrama del tórax con las 8 zonas]
+
+  - tipo: tabla
+    titulo: "El protocolo BLUE en un vistazo"
+    cabecera: ["Perfil", "Hallazgo", "Orienta a"]
+    filas:
+      - ["B", "Líneas B anteriores difusas, deslizamiento +", "Edema hemodinámico"]
+      - ["A + TVP", "Pulmón seco, vena no compresible", "TEP"]
+      - ["A sin TVP", "Pulmón seco, venas normales", "EPOC / asma"]
+      - ["A′ + punto pulmón", "Sin deslizamiento, punto pulmón", "Neumotórax"]
+      - ["A/B, C, PLAPS", "Asimetría, consolidación", "Neumonía"]
+    fuente: "Lichtenstein 2008 · Lichtenstein 2014"
+    notas: |
+      Acertó el 90,5 % en su estudio original de UCI. En urgencias rinde peor para el TEP (lo vemos en el caso 3).
+      [Pendiente: árbol BLUE como diagrama propio]
+
+  - tipo: tabla
+    titulo: "¿Cuánto rinde? Ecografía frente a Rx frente a péptidos"
+    cabecera: ["Prueba para ICA", "Sensibilidad", "LR+", "LR−", "Sirve para"]
+    filas:
+      - ["Ecografía pulmonar (patrón B)", "88–92 %", "7,4", "0,16", "Confirmar y descartar"]
+      - ["Radiografía de tórax", "73–77 %", "4,8", "≈ 0,30", "Confirmar"]
+      - ["NT-proBNP < 300 pg/ml", "—", "—", "0,09", "Descartar"]
+    fuente: "Maw 2019 · Chiu 2022 · Martindale 2016"
+    notas: |
+      El péptido sirve para descartar; la ecografía confirma y descarta. Añadir la LUS a la clínica mejora el
+      diagnóstico más que añadir Rx y NT-proBNP (AUC 0,95 frente a 0,87; Pivetta 2019). Pulmón y corazón
+      a la vez suben la especificidad al 96 % (Popat 2026).
+
+  - tipo: contenido
+    titulo: "Resolución del caso 1"
+    puntos:
+      - "Pulmón: patrón B en 7 de 8 zonas, pleura fina"
+      - "Derrame pleural bilateral pequeño"
+      - "FoCUS: FEVI visual muy reducida"
+      - "Probabilidad de ICA: 40 % → ≈ 83 %"
+      - "Diurético i.v. sin esperar al péptido; sin antibiótico"
+    fuente: "Martindale 2016 · Popat 2026 · McDonagh 2021 (ESC)"
+    notas: |
+      Recuperar la votación inicial. Las sibilancias eran «asma cardial». Pedir después una ecocardiografía reglada.
+      El cálculo con el teorema de Bayes es propio (LR+ 7,4 aplicado a una probabilidad pretest del 40 %).
+
+  - tipo: mensaje
+    texto: "Patrón para diagnosticar"
+    subtexto: "Líneas B difusas y bilaterales + FoCUS confirman la ICA mejor que la radiografía"
+    notas: Pausa.
+
+  # ---------- Bloque C · Diferencial y descongestión (5,5 min) ----------
+  - tipo: contenido
+    titulo: "Caso 3 · Pulmón normal, paciente que no respira bien"
+    puntos:
+      - "Disnea aguda con perfil A bilateral"
+      - "Compresión venosa: vena femoral no compresible"
+      - "Perfil A + TVP → TEP (especificidad del 99 %)"
+      - "Perfil A sin TVP no descarta el TEP"
+      - "BLUE en urgencias: sensibilidad para el TEP del 46 %"
+      - "Multiórgano (pulmón, corazón, venas): sensibilidad del 90 %"
+    fuente: "Lichtenstein 2008 · Bekgoz 2019 · Nazerian 2014"
+    notas: |
+      Variante opcional: líneas B focales con consolidación y pleura irregular = neumonía (Padrao 2025; Copetti 2008).
+
+  - tipo: mensaje
+    texto: "Perfil A: mira las piernas y el corazón"
+    notas: Pausa.
+
+  - tipo: contenido
+    titulo: "Caso 2 · «Mañana se va de alta»"
+    puntos:
+      - "ICA en mejoría; «seco» a la auscultación"
+      - "Líneas B residuales en ambos hemitórax"
+      - "Hasta el 41 % de los «secos» tiene congestión ecográfica"
+      - "Líneas B al alta: HR 2,32 de reingreso o muerte"
+      - "ESC: descartar la congestión antes del alta (I C)"
+    fuente: "Rivas-Lasarte 2020 · Suhardi 2025 · McDonagh 2021 · Gargani 2023"
+    notas: |
+      Pregunta: «¿la dais de alta?». Con 8 zonas, la congestión residual es ≥ 1 zona positiva por hemitórax.
+      El hallazgo cambia el plan de alta: diurético y revisión a 1–2 semanas.
+
+  - tipo: tabla
+    titulo: "¿Guiar el diurético por las líneas B?"
+    cabecera: ["Ámbito", "Resultado", "Evidencia"]
+    filas:
+      - ["Consulta y tras el alta", "Visitas urgentes por IC: RR 0,31–0,38", "4 metaanálisis"]
+      - ["Consulta y tras el alta", "Hospitalización por IC: discordante", "4 metaanálisis"]
+      - ["Consulta y tras el alta", "Mortalidad: sin efecto", "4 metaanálisis"]
+      - ["Durante el ingreso", "Sin beneficio demostrado", "Pilotos negativos (BLUSHED-AHF)"]
+    fuente: "Mhanna 2022 · Al-Sagban 2026 · Chotalia 2026 · Bagheri 2026 · Pang 2021"
+    notas: |
+      Pronóstico no es beneficio. Al-Sagban usa efectos fijos y tiene una carta crítica publicada.
+      Ensayos en marcha: ICARUS y ABDOPOCUS-HF (España).
+
+  - tipo: mensaje
+    texto: "Número para seguir la evolución, y al alta"
+    notas: Pausa.
+
+  # ---------- Bloque D · Guías, errores y cierre (2,5 min) ----------
+  - tipo: tabla
+    titulo: "Qué dicen las guías"
+    cabecera: ["Documento", "Qué dice", "Fuerza"]
+    filas:
+      - ["ESC IC 2021", "LUS «se puede considerar»", "Sin clase"]
+      - ["ESC IC 2021", "Descartar congestión antes del alta", "I C"]
+      - ["EACVI 2023", "LUS «apropiada»; protocolo de 8 zonas", "Consenso"]
+      - ["ACP 2021 · SCCM 2024", "POCUS si hay incertidumbre diagnóstica", "Condicional, certeza baja"]
+      - ["SEMI 2025 · SEMI/SEC/S.E.N. 2024", "Posicionamiento y escala de congestión", "Sin gradación"]
+    fuente: "McDonagh 2021 · Gargani 2023 · Qaseem 2021 · Díaz-Gómez 2025 · Tung-Chen 2025 · Llàcer 2024"
+    notas: |
+      Laguna: guiar el diurético durante el ingreso no tiene recomendación.
+      PENDIENTE: verificar la guía ESC 2026 de IC antes de la sesión.
+
+  - tipo: dos_columnas
+    titulo: "Errores frecuentes y cómo empezar mañana"
+    izquierda:
+      titulo: "Errores"
+      puntos:
+        - "Líneas B ≠ IC (SDRA, neumonía, fibrosis)"
+        - "Una zona aislada no es edema"
+        - "Sin líneas B no se descarta la IC"
+        - "Sin deslizamiento ≠ neumotórax"
+    derecha:
+      titulo: "Cómo empezar"
+      puntos:
+        - "5–20 exploraciones supervisadas"
+        - "Siempre el mismo protocolo"
+        - "Documentar zonas y clips"
+        - "Integrar con la clínica"
+    fuente: "Copetti 2008 · Chiem 2015 · Johannessen 2023 · Lichtenstein 2014 · Russell 2020"
+    notas: |
+      La integración clínica es lo que más tarda en aprenderse. Mencionar la formación de la SEMI si hay residentes.
+
+  - tipo: mensaje
+    texto: "1 · Patrón para diagnosticar   2 · Perfil A: mira las piernas   3 · Número para seguir"
+    subtexto: "Con 5 minutos y un ecógrafo, el paciente del caso 1 habría recibido su diurético una hora antes"
+    notas: Volver al caso 1 y cerrar.
+
+  - tipo: referencias
+    titulo: "Bibliografía clave"
+    referencias:
+      - "Gargani L, et al. Lung ultrasound in acute and chronic heart failure (EACVI). Eur Heart J Cardiovasc Imaging. 2023;24:1569-82"
+      - "Demi L, et al. New International Guidelines and Consensus on the Use of Lung Ultrasound. J Ultrasound Med. 2023;42:309-44"
+      - "McDonagh TA, et al. 2021 ESC Guidelines for acute and chronic heart failure. Eur Heart J. 2021;42:3599-726"
+      - "Qaseem A, et al. Point-of-care ultrasonography in acute dyspnea (ACP). Ann Intern Med. 2021;174:985-93"
+      - "Lichtenstein DA, Mezière GA. The BLUE protocol. Chest. 2008;134:117-25"
+      - "Maw AM, et al. POCUS lung ultrasound vs chest radiography in ADHF. JAMA Netw Open. 2019;2:e190703"
+      - "Martindale JL, et al. Diagnosing acute heart failure in the ED. Acad Emerg Med. 2016;23:223-42"
+      - "Pivetta E, et al. Lung ultrasound integrated with clinical assessment for ADHF: RCT. Eur J Heart Fail. 2019;21:754-66"
+      - "Szabó GV, et al. POCUS in acute onset dyspnea: SR/MA. Intern Emerg Med. 2023;18:639-53"
+      - "Al-Sagban A, et al. Lung ultrasound-guided decongestion: SR/MA of RCTs. J Crit Care. 2026;93:155435"
+      - "Rivas-Lasarte M, et al. Subclinical pulmonary congestion at discharge in AHF. ESC Heart Fail. 2020;7:2621-8"
+      - "Suhardi KF, et al. Residual B-lines and cardiovascular events in AHF: SR/MA. Indian Heart J. 2025;77:258-66"
+    notas: Bibliografía completa en la web del proyecto (sección Fuentes).
