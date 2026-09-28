@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fase actual:** 5 — Síntesis preliminar publicada, pendiente de revisión por la usuaria
+**Fase actual:** 6 — Presentación definitiva 1.0 generada. Pendiente: revisión visual en PDF y retoques de la usuaria
 
 **Tema elegido:** **ecografía pulmonar y cardiaca en la disnea aguda y la insuficiencia cardiaca aguda. Del protocolo BLUE a la descongestión guiada por líneas B** (línea A, que combina los temas 3 y 4).
 
@@ -38,21 +38,36 @@ Los mensajes clave son:
 2. Perfil A: mira las piernas y el corazón.
 3. Número para seguir la evolución, y al alta.
 
+## Presentación (versión 1.0, 2026-09-28)
+
+- **Archivos:**
+    - `presentacion/diapositivas.yaml` es el guion;
+    - `presentacion/sesion-clinica.pptx` es el PowerPoint, también descargable desde la web en `docs/assets/presentacion/`.
+- **Contenido:** 21 diapositivas en 20 minutos, en 4 bloques (A 1–5, B 6–11, C 12–16, D 17–21), con notas del orador y la fuente en el pie.
+- **Diagramas propios:** 10, en `docs/assets/diagramas/lus-*.png`, generados por `scripts/diagramas/*.py` con el estilo sobrio de la presentación:
+    - espectro de aireación;
+    - 8 zonas (mapa, edema y congestión residual);
+    - árbol BLUE;
+    - rendimiento de la ecografía frente a la Rx;
+    - probabilidad pre y postest;
+    - *forest plot* de los metaanálisis;
+    - algoritmo práctico;
+    - cardiogénico frente a no cardiogénico.
+- **Imágenes con licencia:** 17 en `docs/assets/img/lus-*`, registradas en `creditos.md`. La presentación usa 3: líneas B, líneas A y TVP no compresible.
+- **ESC 2026 verificada** con las diapositivas oficiales de la ESC:
+    - la LUS aparece en el algoritmo diagnóstico y al alta (< 5 líneas B), sin clase propia;
+    - descartar la congestión antes del alta sigue siendo I C;
+    - el diurético se guía por el sodio urinario (IIb B1).
+
+    El mensaje 3 y la diapositiva de guías ya están actualizados.
+
 ## Próximos pasos
 
-- [ ] La usuaria revisa el resumen ampliado y el esquema; cambios en los mensajes, el orden o el reparto
-- [ ] **Verificar la guía ESC 2026 de IC** (texto completo). Puede cambiar el mensaje 3 y la diapositiva 17
-- [ ] Verificar la actualización internacional de LUS 2025/2026, el texto completo de SEMI 2025 y la carta de Kumar 2026
-- [ ] Fase 4, recursos:
-    - buscar y descargar las imágenes con licencia (patrón B, perfil A, consolidación, derrame, FoCUS con FEVI deprimida, vena no compresible);
-    - registrarlas en `creditos.md`
-- [ ] Diagramas propios con scripts (estilo sobrio con morado):
-    - espectro de aireación;
-    - las 8 zonas;
-    - árbol BLUE;
-    - sensibilidad de LUS frente a Rx;
-    - *forest plot* de los metaanálisis de 2026
-- [ ] Fase 6: `presentacion/diapositivas.yaml` → `.pptx` y revisión visual
+- [ ] **Exportar a PDF y revisar las diapositivas visualmente.** PowerPoint devuelve el error −9074 al abrir por AppleScript, probablemente por un diálogo o un permiso pendiente. Cuando se resuelva: `scripts/exportar_pdf.sh presentacion/sesion-clinica.pptx` → revisar → copiar el PDF a `docs/assets/presentacion/` y enlazarlo desde la síntesis
+- [ ] Retoques de la usuaria sobre el `.pptx`
+- [ ] Opcional: sustituir las imágenes pediátricas (líneas A) por imágenes de adulto
+- [ ] Opcional: descargar a más resolución las imágenes de Commons, que están a unos 500 px por un bloqueo 429
+- [ ] Pendientes de lectura completa: texto completo de la ESC 2026, enunciados de Volpicelli 2026, SEMI 2025 y la carta de Kumar 2026
 
 ## Temas candidatos
 
@@ -93,3 +108,4 @@ Recomendación de Claude: 7, 4 y 1. La decisión es de la usuaria. Hay otros 14 
 | 2026-09-27 | **Fase 1 completada.** Barrido en paralelo de 7 áreas POCUS. Resultado: 10 temas candidatos, cada uno con su ficha (guías, evidencia, cifras, controversias, material visual, estructura de la charla y comentario), una tabla comparativa, una guía de elección según la audiencia y una recomendación. Además, 14 temas descartados en fichas breves. Bibliografía de 119 referencias verificadas en PubMed. Portada en fase 2. |
 | 2026-09-27 | **Fase 3 (parcial).** Decisión: investigar dos líneas combinadas, A (temas 3 + 4) y B (temas 5 + 6), solo texto. Se lanzaron 8 agentes en paralelo. Se publican 9 de los 20 subtemas (4 de la línea A y 5 de la línea B), con índices y navegación. La bibliografía pasa de 119 a 410 referencias verificadas. El resto de subtemas quedan «En preparación» y hay que relanzarlos en la próxima sesión. |
 | 2026-09-27 | **Elección definitiva: línea A.** Línea B descartada y retirada de la web. Se completan con 4 agentes los 6 subtemas pendientes de la línea A (01, 02, 05, 06, 07 y 10) y se verifican 258 referencias nuevas; la bibliografía queda en 348. **Síntesis preliminar:** 3 mensajes clave, resumen ampliado y esquema de 20 diapositivas en 4 bloques para repartir. |
+| 2026-09-28 | **Presentación definitiva 1.0.** Síntesis revisada (ESC 2026 verificada con las diapositivas oficiales; mensaje 3 y guías actualizados). Esquema ampliado a 21 diapositivas con el algoritmo práctico. 10 diagramas propios con scripts y 17 imágenes con licencia libre (créditos y galería en Recursos). PPTX generado y publicado para descarga; exportación a PDF pendiente porque PowerPoint está bloqueado. |

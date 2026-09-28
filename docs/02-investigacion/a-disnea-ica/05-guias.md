@@ -19,7 +19,7 @@ Cada enunciado indica **de dónde sale**: texto completo, resumen (*abstract*) d
 |---|:--:|---|---|---|---|
 | [ESC, IC aguda y crónica](../../05-fuentes/index.md#mcdonagh2021) | 2021 | Guía | Sí: prueba confirmatoria que «se puede considerar» al ingreso, durante el ingreso y antes del alta (tabla 20) | **No**: no aparece en ninguna tabla de recomendaciones | Texto completo (traducción oficial en *Rev Esp Cardiol*) |
 | [ESC, actualización focalizada](../../05-fuentes/index.md#mcdonagh2023) | 2023 | Guía | No modifica las pruebas diagnósticas | — | Fuente secundaria (comentario de la SEC) |
-| [ESC, IC](../../05-fuentes/index.md#kober2026) | 2026 | Guía | `[POR VERIFICAR]` | `[POR VERIFICAR]` | Registro de PubMed, nota de prensa y fuentes secundarias |
+| [ESC, IC](../../05-fuentes/index.md#kober2026) | 2026 | Guía | LUS en el algoritmo diagnóstico (fig. 11) y en los objetivos de descongestión al alta (fig. 14: < 5 líneas B óptimo), sin recomendación graduada propia. Descartar la congestión antes del alta | Sin clase para la LUS; alta **I C** | Diapositivas oficiales de la ESC (tablas y figuras); texto completo no accesible |
 | [HFA: imagen en la sospecha de ICA](../../05-fuentes/index.md#celutkiene2020) | 2020 | Posicionamiento | Sí: ecografía cardiaca y pulmonar focalizada en las primeras horas | No | Resumen |
 | [HFA: diuréticos en la IC con congestión](../../05-fuentes/index.md#mullens2019) | 2019 | Posicionamiento | Evaluación de la congestión y de la respuesta diurética | No (recomendaciones de expertos) | Resumen y su traslado a la ESC 2021 |
 | [ACVC: ecocardiografía y LUS en la ICA](../../05-fuentes/index.md#price2017) | 2017 | Consenso de expertos | Sí: criterio de edema, monitorización y alta | No | Texto completo (manuscrito en PMC) |
@@ -105,11 +105,31 @@ La ESC ha publicado una **nueva guía completa de IC** que sustituye a la de 202
 
 - **Terminología.** Sustituye «aguda» por **«descompensada»**, porque en algunos pacientes la función cardiaca se deteriora de forma gradual (nota de prensa oficial de la ESC). Una fuente secundaria (Medscape) añade que las descompensaciones menos graves podrían tratarse en la comunidad `[POR VERIFICAR]`.
 - **Fenotipos y estadios.** Reduce los fenotipos a dos: FEVI < 50 % y ≥ 50 %. Adopta además un sistema de estadios de A a D (nota de prensa de la ESC).
-- **Diuréticos.** Una fuente secundaria (Guideline Central) cita como recomendación nueva: *«Urinary Na+-guided diuretic therapy may be considered during the first days of treatment of patients with DHF to improve natriuresis and diuresis»*. La redacción («may be considered») sugiere una clase IIb, pero el nivel y la clase siguen `[POR VERIFICAR]`.
-- **Congestión al alta.** El índice de la versión web incluye una figura 14, «Tools used for assessment of decongestion during the pre-discharge phase». No se ha podido ver su contenido `[POR VERIFICAR]`.
+Lo siguiente está **verificado en el juego oficial de diapositivas de la ESC** (septiembre de 2026, 105 diapositivas con las tablas de recomendaciones y las figuras de la guía):
 
-!!! danger "Pendiente de verificación antes de la charla"
-    **No se ha podido acceder al texto completo** de la guía ESC 2026: el servidor de la editorial bloquea la descarga. No sabemos si mantiene, sube o elimina la mención a la ecografía pulmonar de la tabla 20 de 2021. Tampoco sabemos si la figura 14 incluye la LUS o el VExUS entre las herramientas de descongestión al alta. Es **lo primero que hay que leer** antes de cerrar la presentación. Si la guía de 2026 cambia la posición de la LUS, esta página y la [síntesis](../../03-sintesis/index.md) deben actualizarse. `[POR VERIFICAR]`
+- **Diagnóstico de la IC descompensada (figura 11).**
+    - Tras la clínica, el ECG y la analítica, y descartados el shock cardiogénico y el EAP, el algoritmo indica: *«Echocardiography and other examinations as needed: chest X-ray, LUS, specialist review»*.
+    - La LUS aparece como **exploración complementaria «según necesidad»**, al mismo nivel que la radiografía.
+    - El umbral de NT-proBNP del algoritmo es ≥ 300 pg/ml.
+- **Congestión al alta (tabla de recomendaciones previas al alta).** Se **mantiene**: *«Careful evaluation before discharge is recommended in patients hospitalized for DHF to exclude persistent signs of congestion»*, **clase I, nivel C**.
+- **Herramientas de descongestión al alta (figura 14).** La guía fija objetivos clínicos, de laboratorio y de imagen. Por primera vez incluye la **ecografía pulmonar**, con umbrales:
+    - **óptimo < 5 líneas B** (exploración de 28 u 8 zonas);
+    - **aceptable < 15 líneas B** (28 zonas).
+
+    Junto a ella figuran:
+    - la radiografía (resolución de los signos de congestión);
+    - el E/e′ (óptimo < 10, aceptable < 15);
+    - la VCI (óptimo < 21 mm **y** colapso > 50 %);
+    - los péptidos (caída ≥ 30 %, NT-proBNP < 1500 pg/ml o BNP < 250 pg/ml);
+    - la puntuación clínica de congestión.
+
+    El **VExUS no aparece**.
+- **Diuréticos (figura 15).** El algoritmo de descongestión **no usa la LUS**. La respuesta se valora con el sodio urinario a las 2 h (≥ 70 mmol/l) o con la diuresis a las 6 h (≥ 100 ml/h). Recomendación nueva: *«Urinary Na+-guided diuretic therapy may be considered during the first days of treatment of patients with DHF to improve natriuresis and diuresis»*, **clase IIb, nivel B1**.
+- **Clase propia de la LUS: ninguna.** Ninguna tabla de recomendaciones menciona la ecografía pulmonar ni las líneas B. La LUS está en los algoritmos y en los objetivos de descongestión, pero sin recomendación graduada.
+- **Nuevo sistema de niveles de evidencia.** El nivel B se divide en **B1** (al menos un ECA adecuado o su metaanálisis) y **B2** (estudios no aleatorizados adecuados o metaanálisis de ECA pequeños).
+
+!!! warning "Lo que sigue pendiente"
+    El **texto completo** de la guía sigue sin poder leerse, porque la editorial bloquea la descarga. Quedan sin verificar las notas al pie de la figura 14 y posibles menciones de la LUS en el texto explicativo `[POR VERIFICAR]`. Las figuras de la ESC tienen copyright: para la charla se citan sus datos, pero no se reproducen.
 
 ### 2.4 Documentos de la HFA y la ACVC
 
@@ -413,17 +433,17 @@ Participaron los grupos de ecografía clínica de SEMI, SEDAR, SEGG, SEMERGEN, *
     - La EACVI reconoce que falta evidencia de beneficio en la morbimortalidad en ese contexto ([Gargani, 2023](../../05-fuentes/index.md#gargani2023)).
     - El ECA piloto en urgencias no alcanzó su objetivo primario ([Pang, 2021](../../05-fuentes/index.md#pang2021)).
     - El beneficio agregado procede sobre todo de ensayos ambulatorios o tras el alta ([Al-Sagban, 2026](../../05-fuentes/index.md#alsagban2026)). Véase [impacto clínico](04-impacto.md).
-2. **Congestión residual al alta: recomendación I C de la ESC sin método definido** ([McDonagh, 2021](../../05-fuentes/index.md#mcdonagh2021)). La LUS es la candidata con más datos pronósticos, pero los puntos de corte dependen del protocolo (4, 8 o 28 zonas) y no son intercambiables ([Gargani, 2023](../../05-fuentes/index.md#gargani2023)).
+2. **Congestión residual al alta.** La recomendación I C de la ESC se mantiene en 2026, y ahora incluye la LUS entre las herramientas de comprobación: objetivo óptimo < 5 líneas B y aceptable < 15 ([Køber, 2026](../../05-fuentes/index.md#kober2026)). Aun así, los puntos de corte dependen del protocolo (4, 8 o 28 zonas) y no son intercambiables. La EACVI define la congestión residual con 8 zonas como ≥ 1 zona positiva por hemitórax ([Gargani, 2023](../../05-fuentes/index.md#gargani2023)). Hay que explicar qué protocolo se usa.
 3. **VExUS.** Solo el consenso español lo convierte en un criterio operativo ([Llàcer, 2024](../../05-fuentes/index.md#llacer2024)). La EACVI lo cita como herramienta propuesta y ninguna guía lo gradúa. La evidencia en la IC es observacional ([Longino, 2024](../../05-fuentes/index.md#longino2024); [Saadi, 2025](../../05-fuentes/index.md#saadi2025)).
-4. **Documentos de 2026 aún sin leer.** La guía ESC 2026 de IC y la actualización internacional de LUS de 2025 son los más recientes y **deben verificarse antes de presentar** ([Køber, 2026](../../05-fuentes/index.md#kober2026); [Volpicelli, 2026](../../05-fuentes/index.md#volpicelli2026)). Véanse también las [novedades](09-novedades.md).
+4. **Documentos de 2026 aún no leídos completos.** De la guía ESC 2026 solo se han leído las diapositivas oficiales ([Køber, 2026](../../05-fuentes/index.md#kober2026)). De la actualización internacional de LUS, solo el resumen: sus 83 enunciados siguen `[POR VERIFICAR]` ([Volpicelli, 2026](../../05-fuentes/index.md#volpicelli2026)). Véanse también las [novedades](09-novedades.md).
 5. **Norteamérica.** No consta ninguna recomendación sobre la LUS en la guía AHA/ACC/HFSA 2022 `[POR VERIFICAR]`. En cambio, la definición universal de 2026 la reconoce como prueba de congestión ([Walsh, 2026](../../05-fuentes/index.md#walsh2026)).
 6. **España.** Hay un posicionamiento reciente de la SEMI y un consenso tripartito, pero **ningún documento específico de SEMES** sobre la LUS en la ICA. La SEC pidió expresamente que la ESC incorporara la LUS ([SEC, 2022](../../05-fuentes/index.md#sec2022)).
 7. **Evidencia frente a opinión.** Salvo las dos guías GRADE, todo lo que hay es **opinión de expertos estructurada**. La certeza sobre los beneficios clínicos es baja incluso en esas dos guías ([Qaseem, 2021](../../05-fuentes/index.md#qaseem2021); [Díaz-Gómez, 2025](../../05-fuentes/index.md#diazgomez2025)).
 
 ## Puntos clave
 
-- La **ESC 2021** menciona la ecografía pulmonar como prueba confirmatoria que **«se puede considerar»** al ingreso, durante el ingreso y **antes del alta**, pero **sin clase ni nivel**. La actualización de 2023 no cambia las pruebas diagnósticas.
-- La ESC sí recomienda con **clase I, nivel C** descartar la **congestión persistente antes del alta** y revisarla a las 1-2 semanas. La guía no dice cómo; la ecografía es una forma objetiva de hacerlo.
+- La **ESC 2021** menciona la ecografía pulmonar como prueba confirmatoria que **«se puede considerar»**, **sin clase ni nivel**. La **ESC 2026** sigue sin darle clase propia, pero la incluye en el algoritmo diagnóstico de la IC descompensada, junto a la radiografía y «según necesidad».
+- La ESC 2026 **mantiene la recomendación I C** de descartar la **congestión persistente antes del alta**. Por primera vez enumera la LUS entre las herramientas para comprobarlo: **< 5 líneas B óptimo**, < 15 aceptable. El diurético se guía por el sodio urinario (IIb B1), no por las líneas B.
 - El documento de referencia es el **consenso EACVI 2023**:
     - define el edema como líneas B múltiples, difusas y bilaterales;
     - prefiere el protocolo de **8 zonas**;
@@ -432,4 +452,7 @@ Participaron los grupos de ecografía clínica de SEMI, SEDAR, SEGG, SEMERGEN, *
 - Las únicas guías **GRADE**, la **ACP 2021** y la **SCCM 2024**, emiten recomendaciones **condicionales con certeza baja**. La ESICM 2021 da recomendaciones «fuertes» sobre **competencias**, no sobre resultados.
 - En España, el **consenso SEMI/SEC/S.E.N. 2024** integra la LUS y el **VExUS** en una escala multiparamétrica con un objetivo de ≤ 4 puntos. La **SEMI 2025** publica un posicionamiento monográfico. Ninguno de los dos gradúa la ecografía.
 - **La gran laguna:** ninguna guía recomienda con clase formal **guiar el diurético por líneas B** en el paciente hospitalizado.
-- **Antes de la charla hay que verificar** la nueva **guía ESC 2026 de IC** («IC descompensada»; figura 14 sobre las herramientas de descongestión al alta), la **actualización internacional de LUS de 2025** y el texto completo del posicionamiento de la **SEMI 2025**.
+- **Pendiente:**
+    - el texto completo de la guía ESC 2026 (notas al pie de la figura 14);
+    - los enunciados de la **actualización internacional de LUS** (Volpicelli 2026);
+    - el texto completo del posicionamiento de la **SEMI 2025**.

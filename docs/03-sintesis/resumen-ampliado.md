@@ -108,8 +108,10 @@ Lo esencial de la [investigación](../02-investigacion/a-disnea-ica/index.md), o
 
 | Documento | Qué dice | Fuerza |
 |---|---|---|
-| [ESC IC 2021](../05-fuentes/index.md#mcdonagh2021) | La ecografía pulmonar es prueba confirmatoria que «se puede considerar» al ingreso, durante el ingreso y antes del alta | Sin clase ni nivel |
-| | Descartar la congestión persistente **antes del alta** y revisar a 1–2 semanas (no dice cómo) | **I C** |
+| [ESC IC 2026](../05-fuentes/index.md#kober2026) | En el algoritmo diagnóstico de la IC descompensada: «ecocardiografía y otras pruebas según necesidad: radiografía, **LUS**» (figura 11) | Sin clase propia |
+| | Descartar la congestión persistente **antes del alta**. Entre las herramientas para comprobarlo, la LUS: óptimo **< 5 líneas B** (28 u 8 zonas), aceptable < 15 (28 zonas) (figura 14) | **I C** |
+| | Diurético guiado por el **sodio urinario** en los primeros días (no por las líneas B) | IIb B1 |
+| [ESC IC 2021](../05-fuentes/index.md#mcdonagh2021) | Antecedente: LUS como prueba confirmatoria que «se puede considerar» | Sin clase ni nivel |
 | [EACVI 2023](../05-fuentes/index.md#gargani2023) | Considera la LUS «apropiada» para el diagnóstico, la congestión residual al alta y la titulación ambulatoria. Prefiere 8 zonas. Admite que no hay beneficio demostrado en el paciente hospitalizado | Consenso |
 | [ACP 2021](../05-fuentes/index.md#qaseem2021) | POCUS como complemento en la disnea con incertidumbre diagnóstica | Condicional, certeza baja (GRADE) |
 | [SCCM 2024](../05-fuentes/index.md#diazgomez2025) | Ecografía crítica en la disnea o la insuficiencia respiratoria aguda | Condicional, certeza baja (GRADE) |
@@ -117,7 +119,10 @@ Lo esencial de la [investigación](../02-investigacion/a-disnea-ica/index.md), o
 | [Consenso SEMI/SEC/S.E.N. 2024](../05-fuentes/index.md#llacer2024) | Escala multiparamétrica de congestión con LUS y VExUS, con objetivo ≤ 4 puntos | Consenso, no validado |
 | [SEMI 2025](../05-fuentes/index.md#tungchen2025) | Posicionamiento monográfico sobre POCUS en la IC | Sin gradación |
 
-**La gran laguna:** ninguna guía recomienda con clase formal guiar el diurético por líneas B en el paciente hospitalizado.
+**La gran laguna:** ninguna guía recomienda con clase formal guiar el diurético por líneas B en el paciente hospitalizado. La ESC 2026 guía el diurético por el sodio urinario y la diuresis.
+
+!!! note "Fuente de la ESC 2026"
+    Lo verificado sale de las diapositivas oficiales de la guía (tablas de recomendaciones y figuras). El texto completo no se ha podido leer.
 
 → Ampliar en [05 · Qué dicen las guías](../02-investigacion/a-disnea-ica/05-guias.md).
 
@@ -131,7 +136,7 @@ Lo esencial de la [investigación](../02-investigacion/a-disnea-ica/index.md), o
     - líneas B focales o consolidación → neumonía.
 - **Con qué combinarla:** clínica y ecografía primero; el NT-proBNP para descartar y para la duda que queda. Una radiografía normal no descarta la ICA ([Pivetta, 2019](../05-fuentes/index.md#pivetta2019); [Martindale, 2016](../05-fuentes/index.md#martindale2016)).
 - **En planta:** las líneas B bajan en horas y sirven para monitorizar, pero **guiar el diurético por ellas no ha demostrado beneficio** ([Gargani, 2023](../05-fuentes/index.md#gargani2023); [Pang, 2021](../05-fuentes/index.md#pang2021)).
-- **Al alta:** con el protocolo de 8 zonas, **≥ 1 zona positiva en cada hemitórax** es congestión residual. Los umbrales dependen del protocolo y no son intercambiables ([Gargani, 2023](../05-fuentes/index.md#gargani2023)).
+- **Al alta:** la ESC 2026 fija como objetivo óptimo **< 5 líneas B** ([Køber, 2026](../05-fuentes/index.md#kober2026)). La EACVI define la congestión residual con 8 zonas como **≥ 1 zona positiva en cada hemitórax** ([Gargani, 2023](../05-fuentes/index.md#gargani2023)). Los umbrales dependen del protocolo y no son intercambiables.
 - **Documentar:**
     - zonas, método de recuento, posición y sonda;
     - derrame;
