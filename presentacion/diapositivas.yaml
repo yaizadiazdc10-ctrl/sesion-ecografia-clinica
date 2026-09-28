@@ -6,6 +6,8 @@ subtitulo: "Del protocolo BLUE a la descongestión guiada por líneas B"
 autora: "Yaiza Díaz del Castillo"
 fecha: "Sesión clínica · 2026"
 archivo: sesion-clinica.pptx
+# Tema «Dividendo» de PowerPoint (generado con scripts/plantilla_desde_thmx.py desde Dividend.thmx)
+plantilla: presentacion/plantilla-dividendo.pptx
 diapositivas:
   # ---------- Bloque A · Apertura y fundamento (4,5 min) ----------
   - tipo: portada
@@ -44,7 +46,7 @@ diapositivas:
 
   - tipo: imagen
     titulo: "Del aire al agua: líneas A y líneas B"
-    imagen: docs/assets/diagramas/lus-espectro-aireacion.png
+    imagen: docs/assets/diagramas/dividendo/lus-espectro-aireacion.png
     pie: "Cuanto menos aire y más agua, más líneas B"
     fuente: "Esquema propio · Demi 2023 · Lichtenstein 1997"
     notas: |
@@ -86,7 +88,7 @@ diapositivas:
 
   - tipo: imagen
     titulo: "El protocolo de 8 zonas"
-    imagen: docs/assets/diagramas/lus-8-zonas.png
+    imagen: docs/assets/diagramas/dividendo/lus-8-zonas.png
     fuente: "Gargani 2023 (consenso EACVI) · Buessler 2020"
     notas: |
       (1,5 min) Cuatro zonas por hemitórax: anterior superior e inferior, lateral superior e inferior.
@@ -96,7 +98,7 @@ diapositivas:
 
   - tipo: imagen
     titulo: "El protocolo BLUE en un vistazo"
-    imagen: docs/assets/diagramas/lus-arbol-blue.png
+    imagen: docs/assets/diagramas/dividendo/lus-arbol-blue.png
     fuente: "Simplificado de Lichtenstein 2008 · Lichtenstein 2014"
     notas: |
       (1,5 min) Tres puntos por hemitórax y siete perfiles. Perfil B (líneas B anteriores bilaterales
@@ -111,7 +113,7 @@ diapositivas:
       - "Patrón B: LR+ 7,4 · LR− 0,16"
       - "NT-proBNP < 300 pg/ml: LR− 0,09, para descartar"
       - "LUS + clínica mejora más que Rx + NT-proBNP"
-    imagen: docs/assets/diagramas/lus-rendimiento-lus-vs-rx.png
+    imagen: docs/assets/diagramas/dividendo/lus-rendimiento-lus-vs-rx.png
     fuente: "Maw 2019 · Martindale 2016 · Pivetta 2019"
     notas: |
       (1,5 min) El péptido sirve para descartar; la ecografía confirma y descarta.
@@ -127,7 +129,7 @@ diapositivas:
       - "FoCUS: FEVI visual muy reducida"
       - "Diurético i.v. sin esperar al péptido"
       - "Sin antibiótico; ecocardiografía reglada"
-    imagen: docs/assets/diagramas/lus-probabilidad-bayes.png
+    imagen: docs/assets/diagramas/dividendo/lus-probabilidad-bayes.png
     fuente: "Martindale 2016 · Popat 2026 · Køber 2026 (ESC)"
     notas: |
       (1 min) Recuperar la votación de la diapositiva 2. Las sibilancias eran «asma cardial».
@@ -167,7 +169,7 @@ diapositivas:
       - "Líneas B al alta: HR 2,32 de reingreso o muerte"
       - "ESC 2026: descartar congestión al alta (I C)"
       - "Objetivo ESC con LUS: < 5 líneas B"
-    imagen: docs/assets/diagramas/lus-8-zonas-congestion-residual.png
+    imagen: docs/assets/diagramas/dividendo/lus-8-zonas-congestion-residual.png
     fuente: "Rivas-Lasarte 2020 · Suhardi 2025 · Køber 2026 · Gargani 2023"
     notas: |
       (1,5 min) Pregunta: «¿la dais de alta?». La ESC 2026 incluye por primera vez la LUS entre las
@@ -178,7 +180,7 @@ diapositivas:
 
   - tipo: imagen
     titulo: "¿Guiar el diurético por las líneas B?"
-    imagen: docs/assets/diagramas/lus-forest-metaanalisis.png
+    imagen: docs/assets/diagramas/dividendo/lus-forest-metaanalisis.png
     pie: "Menos visitas urgentes, hospitalización discutida, mortalidad sin cambios"
     fuente: "Mhanna 2022 · Al-Sagban 2026 · Chotalia 2026 · Bagheri 2026"
     notas: |
@@ -194,7 +196,7 @@ diapositivas:
   # ---------- Bloque D · Integración y cierre (3,5 min) ----------
   - tipo: imagen
     titulo: "Algoritmo práctico"
-    imagen: docs/assets/diagramas/lus-algoritmo-disnea.png
+    imagen: docs/assets/diagramas/dividendo/lus-algoritmo-disnea.png
     fuente: "Síntesis docente · Qaseem 2021 (ACP) · Gargani 2023 · Lichtenstein 2008 · Martindale 2016"
     notas: |
       (1 min) A quién: disnea aguda con incertidumbre diagnóstica (ACP: condicional, certeza baja).
@@ -225,7 +227,7 @@ diapositivas:
       - "Sin líneas B no se descarta la IC"
       - "Sin deslizamiento ≠ neumotórax: busca el punto pulmón"
       - "Empezar: 5–20 exploraciones supervisadas"
-    imagen: docs/assets/diagramas/lus-cardiogenico-vs-no.png
+    imagen: docs/assets/diagramas/dividendo/lus-cardiogenico-vs-no.png
     fuente: "Copetti 2008 · Chiem 2015 · Johannessen 2023 · Lichtenstein 2014 · Russell 2020"
     notas: |
       (1 min) En la EPOC, la sensibilidad de la LUS para una IC concurrente es solo del 17 %.

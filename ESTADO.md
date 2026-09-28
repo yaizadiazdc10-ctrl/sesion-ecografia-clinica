@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fase actual:** 6 — Presentación definitiva 1.0 generada. Pendiente: revisión visual en PDF y retoques de la usuaria
+**Fase actual:** 6 — Presentación definitiva 1.1 (tema «Dividendo») generada, revisada en PDF y publicada. Pendiente: retoques de la usuaria
 
 **Tema elegido:** **ecografía pulmonar y cardiaca en la disnea aguda y la insuficiencia cardiaca aguda. Del protocolo BLUE a la descongestión guiada por líneas B** (línea A, que combina los temas 3 y 4).
 
@@ -63,7 +63,7 @@ Los mensajes clave son:
 
 ## Próximos pasos
 
-- [ ] **Exportar a PDF y revisar las diapositivas visualmente.** PowerPoint devuelve el error −9074 al abrir por AppleScript, probablemente por un diálogo o un permiso pendiente. Cuando se resuelva: `scripts/exportar_pdf.sh presentacion/sesion-clinica.pptx` → revisar → copiar el PDF a `docs/assets/presentacion/` y enlazarlo desde la síntesis
+- [x] Exportar a PDF y revisar las diapositivas visualmente (hecho el 2026-09-28; el PDF está publicado en la web). Nota anterior: PowerPoint devuelve el error −9074 al abrir por AppleScript, probablemente por un diálogo o un permiso pendiente. Cuando se resuelva: `scripts/exportar_pdf.sh presentacion/sesion-clinica.pptx` → revisar → copiar el PDF a `docs/assets/presentacion/` y enlazarlo desde la síntesis
 - [ ] Retoques de la usuaria sobre el `.pptx`
 - [ ] Opcional: sustituir las imágenes pediátricas (líneas A) por imágenes de adulto
 - [ ] Opcional: descargar a más resolución las imágenes de Commons, que están a unos 500 px por un bloqueo 429
@@ -109,3 +109,4 @@ Recomendación de Claude: 7, 4 y 1. La decisión es de la usuaria. Hay otros 14 
 | 2026-09-27 | **Fase 3 (parcial).** Decisión: investigar dos líneas combinadas, A (temas 3 + 4) y B (temas 5 + 6), solo texto. Se lanzaron 8 agentes en paralelo. Se publican 9 de los 20 subtemas (4 de la línea A y 5 de la línea B), con índices y navegación. La bibliografía pasa de 119 a 410 referencias verificadas. El resto de subtemas quedan «En preparación» y hay que relanzarlos en la próxima sesión. |
 | 2026-09-27 | **Elección definitiva: línea A.** Línea B descartada y retirada de la web. Se completan con 4 agentes los 6 subtemas pendientes de la línea A (01, 02, 05, 06, 07 y 10) y se verifican 258 referencias nuevas; la bibliografía queda en 348. **Síntesis preliminar:** 3 mensajes clave, resumen ampliado y esquema de 20 diapositivas en 4 bloques para repartir. |
 | 2026-09-28 | **Presentación definitiva 1.0.** Síntesis revisada (ESC 2026 verificada con las diapositivas oficiales; mensaje 3 y guías actualizados). Esquema ampliado a 21 diapositivas con el algoritmo práctico. 10 diagramas propios con scripts y 17 imágenes con licencia libre (créditos y galería en Recursos). PPTX generado y publicado para descarga; exportación a PDF pendiente porque PowerPoint está bloqueado. |
+| 2026-09-28 | **Presentación 1.1, tema «Dividendo».** A petición de la usuaria, el PPTX pasa al tema «Dividendo» de PowerPoint. La plantilla se genera desde `Dividend.thmx` con `scripts/plantilla_desde_thmx.py`, y `build_pptx.py` gana un modo de plantilla que usa los diseños del tema. Los diagramas tienen una variante granate en `diagramas/dividendo/`. Se mantienen todo el contenido, los recursos y las notas. PowerPoint vuelve a exportar: el PDF se ha revisado y está publicado en la web junto al PPTX. |

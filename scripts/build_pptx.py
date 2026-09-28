@@ -13,6 +13,10 @@ Tipos de diapositiva admitidos (campo `tipo`):
     mensaje       texto, subtexto?          (mensaje clave a pantalla completa)
     referencias   titulo?, referencias[]
 
+Si el YAML incluye `plantilla: ruta/a/plantilla.pptx`, se usan los diseños, colores y tipografía de esa
+plantilla (p. ej. el tema «Dividendo» de PowerPoint, convertido con scripts/plantilla_desde_thmx.py)
+en lugar del estilo sobrio propio.
+
 Todas admiten `notas` (notas del orador). Un punto puede ser texto o {texto, sub: [..]}.
 Las rutas de imagen son relativas a la raíz del repositorio.
 
@@ -312,6 +316,209 @@ class Constructor:
         print(f"Generada {salida} ({len(self.prs.slides)} diapositivas)")
 
 
+class ConstructorPlantilla:
+    """Construye la presentación sobre los diseños de una plantilla .pptx (clave `plantilla` del YAML),
+    por ejemplo el tema «Dividendo» de PowerPoint convertido con scripts/plantilla_desde_thmx.py.
+    Colores y tipografía los pone el tema: aquí solo se colocan contenidos en sus marcadores."""
+
+    TITULO, CONTENIDO, SECCION, DOS, COMPARACION, SOLO_TITULO = 0, 1, 2, 3, 4, 5
+    GRIS = "7F7F7F"
+
+    def __init__(self, guion):
+        self.guion = guion
+        self.prs = Presentation(RAIZ / guion["plantilla"])
+        self.numero = 0
+
+    # ---------- utilidades ----------
+    def _nueva(self, diseno):
+        self.numero += 1
+        return self.prs.slides.add_slide(self.prs.slide_layouts[diseno])
+
+    @staticmethod
+    def _ph(slide, idx):
+        for ph in slide.placeholders:
+            if ph.placeholder_format.idx == idx:
+                return ph
+        return None
+
+    @staticmethod
+    def _quitar(ph):
+        ph._element.getparent().remove(ph._element)
+
+    def _rellenar(self, ph, puntos, size=20):
+        tf = ph.text_frame
+        tf.word_wrap = True
+        primero = True
+
+        def add(texto, nivel):
+            nonlocal primero
+            p = tf.paragraphs[0] if primero else tf.add_paragraph()
+            primero = False
+            p.text = str(texto)
+            p.level = nivel
+            for r in p.runs:
+                r.font.size = Pt(size if nivel == 0 else size - 3)
+
+        for punto in puntos:
+            if isinstance(punto, dict):
+                add(punto["texto"], 0)
+                for sub in punto.get("sub", []):
+                    add(sub, 1)
+            else:
+                add(punto, 0)
+
+    def _texto(self, slide, x, y, w, h, texto, size=11, color=None, align=None):
+        tb = slide.shapes.add_textbox(x, y, w, h)
+        tf = tb.text_frame
+        tf.word_wrap = True
+        p = tf.paragraphs[0]
+        p.text = texto
+        if align:
+            p.alignment = align
+        for r in p.runs:
+            r.font.size = Pt(size)
+            r.font.color.rgb = rgb(color or self.GRIS)
+        return tb
+
+    def _pie(self, slide, fuente=None):
+        if fuente:
+            self._texto(slide, Inches(0.64), Inches(6.51), Inches(10.6), Inches(0.4), fuente, size=11)
+        self._texto(slide, Inches(11.55), Inches(6.51), Inches(1.15), Inches(0.4), str(self.numero),
+                    size=11, align=PP_ALIGN.RIGHT)
+
+    def _imagen(self, slide, ruta, x, y, w, h):
+        path = RAIZ / ruta
+        if not path.exists():
+            print(f"AVISO: imagen no encontrada: {ruta}", file=sys.stderr)
+            self._texto(slide, x, y, w, h, f"[Falta imagen] {ruta}", size=14)
+            return
+        with Image.open(path) as im:
+            iw, ih = im.size
+        escala = min(w / iw, h / ih)
+        pw, ph = int(iw * escala), int(ih * escala)
+        slide.shapes.add_picture(str(path), x + (w - pw) // 2, y + (h - ph) // 2, pw, ph)
+
+    def _notas(self, slide, d):
+        if d.get("notas"):
+            slide.notes_slide.notes_text_frame.text = str(d["notas"]).strip()
+
+    def _titulo(self, slide, texto):
+        slide.shapes.title.text = texto
+
+    # ---------- tipos de diapositiva ----------
+    def portada(self, d):
+        s = self._nueva(self.TITULO)
+        self._titulo(s, self.guion.get("titulo", ""))
+        sub = self._ph(s, 1)
+        lineas = [self.guion.get("subtitulo", "")]
+        meta = " · ".join(x for x in (self.guion.get("autora"), self.guion.get("fecha")) if x)
+        if meta:
+            lineas.append(meta)
+        sub.text_frame.text = lineas[0]
+        if meta:  # autora y fecha sobre la banda de color del tema, en blanco
+            self._texto(s, Inches(0.64), Inches(5.55), Inches(12.0), Inches(0.5), meta, size=18,
+                        color="FFFFFF")
+        self._notas(s, d)
+
+    def seccion(self, d):
+        s = self._nueva(self.SECCION)
+        self._titulo(s, d["titulo"])
+        cuerpo = self._ph(s, 1)
+        if d.get("subtitulo"):
+            cuerpo.text_frame.text = d["subtitulo"]
+        else:
+            self._quitar(cuerpo)
+        self._notas(s, d)
+
+    def mensaje(self, d):
+        s = self._nueva(self.SECCION)
+        self._titulo(s, d["texto"])
+        cuerpo = self._ph(s, 1)
+        if d.get("subtexto"):
+            cuerpo.text_frame.text = d["subtexto"]
+        else:
+            self._quitar(cuerpo)
+        self._notas(s, d)
+
+    def contenido(self, d):
+        puntos = d.get("puntos", [])
+        n = sum(1 + len(p.get("sub", [])) if isinstance(p, dict) else 1 for p in puntos)
+        if d.get("imagen"):
+            s = self._nueva(self.DOS)
+            self._titulo(s, d["titulo"])
+            self._rellenar(self._ph(s, 1), puntos, size=18 if n <= 6 else 16)
+            der = self._ph(s, 2)
+            x, y, w, h = der.left, der.top, der.width, der.height
+            self._quitar(der)
+            self._imagen(s, d["imagen"], x, y - Inches(0.25), w, h + Inches(0.3))
+        else:
+            s = self._nueva(self.CONTENIDO)
+            self._titulo(s, d["titulo"])
+            self._rellenar(self._ph(s, 1), puntos, size=22 if n <= 5 else 20 if n <= 7 else 18)
+        self._pie(s, d.get("fuente"))
+        self._notas(s, d)
+
+    def imagen(self, d):
+        s = self._nueva(self.SOLO_TITULO)
+        self._titulo(s, d["titulo"])
+        alto = Inches(4.3) - (Inches(0.4) if d.get("pie") else 0)
+        self._imagen(s, d["imagen"], Inches(0.64), Inches(2.05), Inches(12.06), alto)
+        if d.get("pie"):
+            self._texto(s, Inches(0.64), Inches(2.05) + alto + Inches(0.02), Inches(12.06), Inches(0.4),
+                        d["pie"], size=16, align=PP_ALIGN.CENTER)
+        self._pie(s, d.get("fuente"))
+        self._notas(s, d)
+
+    def dos_columnas(self, d):
+        s = self._nueva(self.COMPARACION)
+        self._titulo(s, d["titulo"])
+        for idx_t, idx_c, col in ((1, 2, d.get("izquierda", {})), (3, 4, d.get("derecha", {}))):
+            t = self._ph(s, idx_t)
+            if col.get("titulo"):
+                t.text_frame.text = col["titulo"]
+            else:
+                self._quitar(t)
+            self._rellenar(self._ph(s, idx_c), col.get("puntos", []), size=18)
+        self._pie(s, d.get("fuente"))
+        self._notas(s, d)
+
+    def tabla(self, d):
+        s = self._nueva(self.SOLO_TITULO)
+        self._titulo(s, d["titulo"])
+        cab, filas = d["cabecera"], d["filas"]
+        alto_fila = Inches(0.62)
+        t = s.shapes.add_table(len(filas) + 1, len(cab), Inches(0.64), Inches(2.15),
+                               Inches(12.06), alto_fila * (len(filas) + 1)).table
+        for r, fila in enumerate([cab] + filas):
+            for c, valor in enumerate(fila):
+                celda = t.cell(r, c)
+                celda.text = str(valor)
+                celda.vertical_anchor = MSO_ANCHOR.MIDDLE
+                for p in celda.text_frame.paragraphs:
+                    for run in p.runs:
+                        run.font.size = Pt(16 if r else 17)
+                        run.font.bold = r == 0
+        self._pie(s, d.get("fuente"))
+        self._notas(s, d)
+
+    def referencias(self, d):
+        s = self._nueva(self.CONTENIDO)
+        self._titulo(s, d.get("titulo", "Bibliografía"))
+        self._rellenar(self._ph(s, 1), d.get("referencias", []), size=14)
+        self._notas(s, d)
+
+    def construir(self, salida):
+        for i, d in enumerate(self.guion["diapositivas"], 1):
+            tipo = d.get("tipo", "contenido")
+            metodo = getattr(self, tipo, None)
+            if metodo is None or tipo.startswith("_") or tipo == "construir":
+                sys.exit(f"Diapositiva {i}: tipo desconocido '{tipo}'")
+            metodo(d)
+        salida.parent.mkdir(parents=True, exist_ok=True)
+        self.prs.save(salida)
+        print(f"Generada {salida} ({len(self.prs.slides)} diapositivas, plantilla {self.guion['plantilla']})")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("guion", type=Path)
@@ -319,7 +526,7 @@ def main():
     args = ap.parse_args()
     guion = yaml.safe_load(args.guion.read_text(encoding="utf-8"))
     salida = (args.salida or RAIZ / "presentacion" / guion.get("archivo", "sesion-clinica.pptx")).resolve()
-    Constructor(guion).construir(salida)
+    (ConstructorPlantilla if guion.get("plantilla") else Constructor)(guion).construir(salida)
 
 
 if __name__ == "__main__":

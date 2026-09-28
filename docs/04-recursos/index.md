@@ -2,13 +2,13 @@
 
 Material visual de la sesión:
 
-- **Presentación:** [descargar el PowerPoint (.pptx)](../assets/presentacion/sesion-clinica.pptx). Es editable para los retoques finales.
+- **Presentación (tema «Dividendo»):** [ver el PDF](../assets/presentacion/sesion-clinica.pdf) o [descargar el PowerPoint (.pptx)](../assets/presentacion/sesion-clinica.pptx), editable para los retoques finales.
 - **Diagramas propios:** generados con los scripts de `scripts/diagramas/`, con el estilo sobrio de la presentación (blanco y negro más acento morado).
 - **Imágenes ecográficas:** descargadas con licencia libre. Los créditos y licencias de cada una están en [Créditos de imágenes](creditos.md).
 
 ## Diagramas propios
 
-Esquemas y gráficos hechos para la charla. Los datos salen de la investigación, y cada script cita su fuente en un comentario. Para regenerarlos: `.venv/bin/python scripts/diagramas/<script>.py`.
+Esquemas y gráficos hechos para la charla. Los datos salen de la investigación, y cada script cita su fuente en un comentario. Para regenerarlos: `.venv/bin/python scripts/diagramas/<script>.py`. La presentación usa una variante con el granate del tema Dividendo, en `docs/assets/diagramas/dividendo/`, que se genera con `DIAGRAMAS_TEMA=dividendo` delante del mismo comando.
 
 ![Espectro de aireación: de líneas A a consolidación](../assets/diagramas/lus-espectro-aireacion.png){ loading=lazy }
 

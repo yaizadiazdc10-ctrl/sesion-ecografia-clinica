@@ -4,13 +4,13 @@
 
 Sesión clínica de 20 minutos para médicos y residentes.
 
-!!! success "Versión definitiva 1.0 de la presentación"
-    **[Descargar el PowerPoint (.pptx)](../assets/presentacion/sesion-clinica.pptx)**: 21 diapositivas, 20 minutos, con notas del orador en cada diapositiva.
+!!! success "Versión definitiva 1.1 de la presentación (tema «Dividendo»)"
+    **[Ver el PDF](../assets/presentacion/sesion-clinica.pdf)** · **[Descargar el PowerPoint (.pptx)](../assets/presentacion/sesion-clinica.pptx)**
 
-    - Está construido a partir del [esquema de diapositivas](esquema-diapositivas.md).
-    - Incluye 10 diagramas propios y 3 imágenes ecográficas con licencia libre. La galería completa está en [Recursos](../04-recursos/index.md).
-    - Es editable para los retoques finales.
-    - La versión PDF para consulta en la web está pendiente: la exportación automática con PowerPoint está bloqueada en este equipo.
+    - 21 diapositivas en 20 minutos, con notas del orador en cada una.
+    - Usa el tema **«Dividendo»** de PowerPoint, con sus diseños, tipografía (Gill Sans MT) y colores.
+    - Incluye 10 diagramas propios, adaptados al granate del tema, y 3 imágenes ecográficas con licencia libre. La galería completa está en [Recursos](../04-recursos/index.md).
+    - Está construido a partir del [esquema de diapositivas](esquema-diapositivas.md) y es editable para los retoques finales.
 
 <div class="grid cards" markdown>
 

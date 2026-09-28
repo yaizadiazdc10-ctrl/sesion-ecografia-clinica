@@ -45,6 +45,10 @@ No saltes fases: no se investiga a fondo sin tema elegido, y no se sintetiza sin
 - Los **diagramas propios** se generan con scripts de Python en `scripts/` (matplotlib u otras librerías) y se guardan en `docs/assets/diagramas/`. El script debe poder regenerar la figura.
 - No incluir imágenes con datos identificables de pacientes.
 - **Dos identidades visuales:** la **web** usa la paleta rosa oro (`docs/stylesheets/extra.css`); la **presentación y los diagramas** son sobrios y elegantes: blanco y negro con grises y un único acento **morado** (`#5B3F8C`) usado con moderación. El rosa oro no se usa nunca en el `.pptx` ni en los diagramas.
+  - **Decisión de la usuaria (2026-09-28):** la presentación de la charla usa el tema **«Dividendo»** de PowerPoint.
+    - La plantilla es `presentacion/plantilla-dividendo.pptx`, generada con `scripts/plantilla_desde_thmx.py`.
+    - Se activa con la clave `plantilla` en `diapositivas.yaml`.
+    - Los diagramas de la presentación se generan con `DIAGRAMAS_TEMA=dividendo`, que cambia el acento al granate `#903163` y los guarda en `docs/assets/diagramas/dividendo/`.
 
 ## Estructura del repositorio
 

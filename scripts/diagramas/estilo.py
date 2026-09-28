@@ -8,6 +8,7 @@ Uso en un script de diagrama:
     guardar(fig, "nombre-descriptivo")           # → docs/assets/diagramas/nombre-descriptivo.png
 """
 
+import os
 from pathlib import Path
 
 import matplotlib
@@ -36,6 +37,15 @@ PALETA = {
 }
 # Series: negro, grises y morado al final para la serie que se quiere destacar
 SERIES = ["#111111", "#707070", "#A8A8A8", "#5B3F8C", "#D4D4D4"]
+
+# Variante para la presentación con el tema «Dividendo» de PowerPoint:
+#   DIAGRAMAS_TEMA=dividendo .venv/bin/python scripts/diagramas/<script>.py
+# Cambia solo el acento (granate del tema) y guarda en docs/assets/diagramas/dividendo/.
+TEMA = os.environ.get("DIAGRAMAS_TEMA", "").lower()
+if TEMA == "dividendo":
+    PALETA.update({"acento": "#903163", "acento_suave": "#F3E4EC", "positivo": "#903163"})
+    SERIES = ["#111111", "#707070", "#A8A8A8", "#903163", "#D4D4D4"]
+    SALIDA = SALIDA / "dividendo"
 
 
 def aplicar_estilo():
